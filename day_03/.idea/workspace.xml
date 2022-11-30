@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bc2a188-7214-4bcf-be1d-42bfa128a621" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../day_02/lesson03/src/ForDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day_02/lesson03/src/IfDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day_02/lesson03/src/PracticeIfElse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day_02/lesson03/src/PracticeSwitch.java" afterDir="false" />
+    <list default="true" id="3ebf8411-0440-4680-887a-00e4e610fd98" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../day_02/lesson_02/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../day_02/lesson_02/src/DateAndTime.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../day_02/lesson_02/src/Demo.java" afterDir="false" />
@@ -26,30 +22,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2I2vVNiN1dnDVu5DnVx7TH9VJrC" />
+  <component name="ProjectId" id="2IDjoaMZK0CxEHNllES6xKw0lMB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tranthanhlong/TechMaster/JAVA/JavaBasic/day_01&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/tranthanhlong/TechMaster/JAVA/JavaBasic/day_03"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4bc2a188-7214-4bcf-be1d-42bfa128a621" name="Changes" comment="" />
-      <created>1669392515476</created>
+      <changelist id="3ebf8411-0440-4680-887a-00e4e610fd98" name="Changes" comment="" />
+      <created>1669723223550</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669392515476</updated>
-      <workItem from="1669392516610" duration="113000" />
-      <workItem from="1669741496462" duration="63000" />
+      <updated>1669723223550</updated>
+      <workItem from="1669723224896" duration="13000" />
     </task>
     <servers />
   </component>

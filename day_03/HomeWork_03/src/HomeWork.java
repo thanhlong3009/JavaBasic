@@ -8,7 +8,7 @@ public class HomeWork {
         System.out.println(repeatString2("Thành"));
 
         // bài 3
-        repeat3("Long", 5);
+        System.out.println(repeat3("Long", 5));
 
         // bài 4
         System.out.println(sumOf());
@@ -43,12 +43,12 @@ public class HomeWork {
     }
 
     // bài 3
-    public static void repeat3(String str, int number) {
+    public static String repeat3(String str, int number) {
         String rp = str;
         for (int i = 1; i < number; i++) {
             rp = rp + "-" + str;
         }
-        System.out.println(rp);
+        return rp;
     }
 
     // bài 4
@@ -64,8 +64,7 @@ public class HomeWork {
 
     // bài 5
     public static double calculateVolumeOfSphere(double radius) {
-        double volume = 3d / 4 * Math.PI * Math.pow(radius,3);
-        return volume;
+        return 3d / 4 * Math.PI * Math.pow(radius,3);
     }
 
     // bài 6

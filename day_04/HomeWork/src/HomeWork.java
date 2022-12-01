@@ -37,7 +37,7 @@ public class HomeWork {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập họ tên của bạn: ");
         String fullNamePrimitive = sc.nextLine();
-        String fullName= fullNamePrimitive.toLowerCase();
+        String fullName = fullNamePrimitive.toLowerCase();
 
         char[] fullNameArray = fullName.toCharArray();
         boolean space = true;
@@ -94,6 +94,7 @@ public class HomeWork {
             }
         }
     }
+
     public static void showMenu() {
         System.out.println("\n********* MENU *********");
         System.out.println("1 - Bài tập 1");
@@ -101,8 +102,8 @@ public class HomeWork {
         System.out.println("3 - Thoát\n");
     }
 
-//    ----------------------HomeWork2-----------------------
-    public  static void enterElementOfArray( int[] arr) {
+    //    ----------------------HomeWork2-----------------------
+    public static void enterElementOfArray(int[] arr) {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < arr.length; i++) {
             System.out.printf("Nhập phần tử thứ %d của mảng: ", i);
@@ -116,8 +117,8 @@ public class HomeWork {
         for (int j = 0; j < arr.length; j++) {
             System.out.print(arr[j] + " ");
         }
-
     }
+
     public static void printNewArray(int[] arr) {
         System.out.println("In ra màn hình mảng mới");
         for (int j = 0; j < arr.length; j++) {

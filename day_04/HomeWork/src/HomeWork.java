@@ -36,7 +36,8 @@ public class HomeWork {
     public static void HomeWork1() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập họ tên của bạn: ");
-        String fullName = sc.nextLine();
+        String fullNamePrimitive = sc.nextLine();
+        String fullName= fullNamePrimitive.toLowerCase();
 
         char[] fullNameArray = fullName.toCharArray();
         boolean space = true;

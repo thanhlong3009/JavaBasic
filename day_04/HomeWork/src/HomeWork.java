@@ -114,21 +114,21 @@ public class HomeWork {
 
     public static void printArray(int[] arr) {
         System.out.println("In ra màn hình mảng nhận được");
-        for (int j = 0; j < arr.length; j++) {
-            System.out.print(arr[j] + " ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
     }
 
     public static void printNewArray(int[] arr) {
         System.out.println("In ra màn hình mảng mới");
-        for (int j = 0; j < arr.length; j++) {
+        for (int i = 0; i < arr.length; i++) {
 
-            if (arr[j] % 2 == 0) {
-                arr[j] += 1;
+            if (arr[i] % 2 == 0) {
+                arr[i] += 1;
             }
         }
-        for (int k = 0; k < arr.length; k++) {
-            System.out.print(arr[k] + " ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.print(arr[j] + " ");
         }
     }
 

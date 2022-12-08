@@ -29,12 +29,8 @@ public class ArrayDemo {
             arrB[k] = arrA[k];
         }
 
-        int[] arrC = new int[5];
-        arrC = arrA;
-        for (int h = 0 ; h < arrC.length; h++) {
-            System.out.println(arrC[h]);
 
-        }
+
 
 
         Arrays.sort(arrB);

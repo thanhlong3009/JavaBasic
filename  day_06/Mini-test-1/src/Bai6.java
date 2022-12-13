@@ -22,7 +22,7 @@ public class Bai6 {
         System.out.println("Nhập số điện thoại: ");
         String phoneNumber = sc.nextLine();
 
-        // kiểm tra 
+        // kiểm tra
         System.out.println("email nhập có chính xác không?: " + Pattern.matches(EMAIL_PATTERN,email));
         System.out.println("Số điện thoại nhập có chính xác không?: " + Pattern.matches(PHONE_PATTERN,phoneNumber));
     }

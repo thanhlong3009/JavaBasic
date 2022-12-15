@@ -60,9 +60,7 @@ public class Film {
         this.releaseDate = releaseDate;
     }
 
-    public void display() {
-        System.out.println("Id: " + id + "\n" + "Tên phim: " + title + "\n" + "Thể loại: " + category + "\n" + "Giám đốc sản xuất : " + director + "\n" + "Ngày công chiếu: " + releaseDate);
-    }
+
 
 
     @Override

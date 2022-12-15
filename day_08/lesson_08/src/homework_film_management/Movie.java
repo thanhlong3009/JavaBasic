@@ -20,16 +20,17 @@ public class Movie extends Film{
         this.movieDuration = movieDuration;
     }
 
-    public void display() {
-        super.display();
-        System.out.println("Thời lượng phim: " + movieDuration);
-    }
+
 
 
     @Override
     public String toString() {
-        return "Movie{" +
+        return "Movie{" + "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", category='" + getCategory() + '\'' +
+                ", director='" + getDirector() + '\'' +
+                ", releaseDate='" + getReleaseDate() + '\''  +
                 "movieDuration='" + movieDuration + '\'' +
-                '}'+ super.toString();
+                '}';
     }
 }

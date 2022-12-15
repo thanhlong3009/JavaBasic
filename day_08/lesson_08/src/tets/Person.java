@@ -35,12 +35,12 @@ public class Person {
         System.out.print(id + " " + name + " ");
     }
 
-    public void enter(Person s) {
+    public void enter() {
         Scanner sc = new Scanner(System.in);
         System.out.print("\tNhap id: ");
-        s.setId(Integer.parseInt(sc.nextLine()));
+        this.setId(Integer.parseInt(sc.nextLine()));
         System.out.print("\tNhap ho ten: ");
-        s.setName(sc.nextLine());
+        this.setName(sc.nextLine());
     }
 
 

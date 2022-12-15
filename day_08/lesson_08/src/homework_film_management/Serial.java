@@ -1,6 +1,6 @@
 package homework_film_management;
 
-public class Serial extends Film{
+public class Serial extends Film {
     private int episodeNumber;
     private String avgDuration;
 
@@ -30,14 +30,14 @@ public class Serial extends Film{
         this.avgDuration = avgDuration;
     }
 
-    public void display() {
-        super.display();
-        System.out.println("Số tập :" + episodeNumber + "\n" + "Thời lượng trung bình: " + avgDuration);
-    }
 
     @Override
     public String toString() {
-        return "Serial{" +
+        return "Serial{" + "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", category='" + getCategory() + '\'' +
+                ", director='" + getDirector() + '\'' +
+                ", releaseDate='" + getReleaseDate() + '\'' +
                 "episodeNumber=" + episodeNumber +
                 ", avgDuration='" + avgDuration + '\'' +
                 '}';

@@ -22,9 +22,9 @@ public class Students extends Person{
         System.out.println("\tDiem toan: " + math);
 
     }
-    public void enter(Person a) {
+    public void enter() {
         Scanner sc = new Scanner(System.in);
-        super.enter(a);
+        super.enter();
         System.out.print("\tNhap diem toan: ");
         this.math = Double.parseDouble(sc.nextLine());
     }
@@ -32,8 +32,9 @@ public class Students extends Person{
 
     @Override
     public String toString() {
-        return "Students{" +
-                "math=" + math +
+        return "Students{" + "id=" + getId() +
+                ", name='" + getName() + "'" +
+                ", math=" + math +
                 '}';
     }
 }

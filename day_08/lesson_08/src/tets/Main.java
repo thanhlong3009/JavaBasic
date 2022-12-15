@@ -5,19 +5,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-//        Person[] people = new Person[2];
-//        for (int i = 0; i < 2; i++) {
-//            people[i] = new Person();
-//            people[i].enter(people[i]);
-//        }
 //
-//        for (int i = 0; i < 2; i++) {
-//            people[i].display();
-//        }
-
         Students students = new Students();
-        students.enter(students);
-        students.display();
+        students.enter();
+        System.out.println(students);
+//        Person person = new Person();
+//        person.enter();
+//        System.out.println(person);
+        Students[] students1 = new Students[3];
+        for (int i = 0; i < 3; i++) {
+            students1[i] = new Students();
+            students1[i].enter();
+
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println(students1[i]);
+        }
+
+
     }
 }

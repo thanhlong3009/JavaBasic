@@ -12,8 +12,6 @@ public class Main {
         // Tìm phim theo tiêu đề
         findByTitle("Bad");
 
-        System.out.println(movies[1]);
-
     }
 
     public static Movie[] movies = {
@@ -30,16 +28,17 @@ public class Main {
 
 
     public static void printInfo() {
+
+        System.out.println("--------Danh sách phim--------- ");
         for (int i = 0; i < 3; i++) {
-            System.out.println("Bộ phim thứ " + (i+1));
-            movies[i].display();
-            System.out.println();
+            System.out.println(movies[i]);
         }
+        System.out.println();
+        System.out.println("--------Danh sách phim truyền hình series---------");
         for (int i = 0; i < 3; i++) {
-            System.out.println("Bộ phim truyền hình thứ " + (i + 1));
-            serials[i].display();
-            System.out.println();
+            System.out.println(serials[i]);
         }
+        System.out.println();
     }
 
     // Tìm phim theo tiêu đề
@@ -47,13 +46,13 @@ public class Main {
         int count = 0;
         for (Movie film : movies)  {
             if (film.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                film.display();
+                System.out.println(film);
                 count++;
             }
         }
         for (Serial film : serials) {
             if (film.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                film.display();
+                System.out.println(film);
                 count++;
             }
         }

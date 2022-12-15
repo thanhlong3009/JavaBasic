@@ -1,15 +1,19 @@
 package homework_film_management;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        // In ra thông tin phim 
+        // In ra thông tin phim
         printInfo();
         // Tìm phim theo tiêu đề
         findByTitle("Bad");
+
+        System.out.println(movies[1]);
+
     }
 
     public static Movie[] movies = {
@@ -31,7 +35,6 @@ public class Main {
             movies[i].display();
             System.out.println();
         }
-
         for (int i = 0; i < 3; i++) {
             System.out.println("Bộ phim truyền hình thứ " + (i + 1));
             serials[i].display();

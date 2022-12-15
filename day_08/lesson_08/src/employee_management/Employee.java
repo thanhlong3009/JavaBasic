@@ -74,10 +74,7 @@ public class Employee {
         System.out.println(this);
     }
 
-    public void display() {
-        System.out.print("Id: " + id + "\n" + "Name: " + name + "\n" + "Age: " + age + "\n" + "Phone: " + phone + "\n" + "Email: " + email + "\n");
-
-    }
+    
     public void  enter() {
         Scanner sc = new Scanner(System.in);
 

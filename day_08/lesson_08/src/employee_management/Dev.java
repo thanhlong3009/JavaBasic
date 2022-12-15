@@ -41,17 +41,16 @@ public class Dev extends Employee {
     }
 
 
-    public void display() {
-        super.display();
-        System.out.println("Lương: " + calculateSalary());
-    }
-
-
-
     @Override
     public String toString() {
         return "Dev{" +
-                "overtimeHours=" + overtimeHours +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", phone='" + getPhone() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", salaryBasic=" + getSalaryBasic() +
+                ", overtimeHours=" + overtimeHours + ", Salary=" + calculateSalary() +
                 '}';
     }
 }

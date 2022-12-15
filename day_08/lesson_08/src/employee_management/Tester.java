@@ -36,15 +36,17 @@ public class Tester extends Employee{
         this.setError(Integer.parseInt(sc.nextLine()));
     }
 
-    public void display() {
-        super.display();
-        System.out.println("Lương: " + calculateSalary());
-    }
 
     @Override
     public String toString() {
         return "Tester{" +
-                "error=" + error +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", phone='" + getPhone() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", salaryBasic=" + getSalaryBasic() +
+                ", error=" + error + ", Salary=" + calculateSalary() +
                 '}';
     }
 }

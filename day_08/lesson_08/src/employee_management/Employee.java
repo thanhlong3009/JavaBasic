@@ -74,7 +74,7 @@ public class Employee {
         System.out.println(this);
     }
 
-    
+
     public void  enter() {
         Scanner sc = new Scanner(System.in);
 

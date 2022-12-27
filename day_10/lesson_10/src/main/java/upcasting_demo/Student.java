@@ -8,9 +8,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Student extends Person{
 
+    public Student(String name) {
+        super(name);
+    }
     // Định nghĩa phương thức của lớp con
     public void display() {
         System.out.println("My name is " + this.getName());

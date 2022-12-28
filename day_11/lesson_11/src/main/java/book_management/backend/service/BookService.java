@@ -3,10 +3,7 @@ package book_management.backend.service;
 import book_management.backend.model.Book;
 import book_management.backend.repository.BookRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BookService {
     private final BookRepository bookRepository = new BookRepository();
@@ -32,6 +29,28 @@ public class BookService {
     }
 
     public void sortByPageName() {
+        List<Book> books = bookRepository.findAll();
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return o1.getPageNumber() - o2.getPageNumber() ;
+            }
+        });
+        for (Book b:books) {
+            System.out.println(b);
+        }
+    }
 
+    public void getBooksByReleaseYear() {
+        List<Book> books = bookRepository.findAll();
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return o1.getReleaseYear() - o2.getReleaseYear();
+            }
+        });
+        for (Book b:books) {
+            System.out.println(b);
+        }
     }
 }

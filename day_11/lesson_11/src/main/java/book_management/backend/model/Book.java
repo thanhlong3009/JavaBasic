@@ -22,5 +22,5 @@ public class Book {
     @SerializedName("page_number")
     private int pageNumber;
     @SerializedName("release_year")
-    private int release_year;
+    private int releaseYear;
 }

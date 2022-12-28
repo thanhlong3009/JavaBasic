@@ -62,11 +62,13 @@ public class BookUI {
                     break;
                 }
                 case 4: {
+                    System.out.println("Danh sách sách sau khi sắp xếp theo số trang");
                     bookController.sortByPageNumber();
                     break;
                 }
                 case 5: {
-
+                    System.out.println("Danh sách sách sau khi sắp xếp theo năm phát hành");
+                    bookController.getBooksByReleaseYear();
                     break;
                 }
                 case 6: {

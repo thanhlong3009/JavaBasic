@@ -23,4 +23,8 @@ public class BookController {
     public void sortByPageNumber() {
         bookService.sortByPageName();
     }
+
+    public void getBooksByReleaseYear() {
+        bookService.getBooksByReleaseYear();
+    }
 }

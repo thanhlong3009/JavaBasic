@@ -16,7 +16,19 @@ public class AccountController {
         return accountService.findAccountByEmail(email);
     }
 
-    public void updateUserName(String email, String useName) {
-        accountService.updateUserName(email,useName);
+    public void updateUserName(String email, String useNameUpdate) {
+        accountService.updateUserName(email,useNameUpdate);
+    }
+
+    public void updateEmail(String email, String emailUpdate) {
+        accountService.updateEmail(email,emailUpdate);
+    }
+
+    public void forgotPassword(String email) {
+        accountService.forgotPassword(email);
+    }
+
+    public void createAccount(String userName, String email, String password) {
+        accountService.createAccount(userName,email,password);
     }
 }

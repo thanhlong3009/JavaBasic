@@ -45,6 +45,8 @@ public class AccountUI {
 
                         while (!subIsQuit) {
                             System.out.println("user: " + accountController.findAccountByEmail(email).getUserName());
+                            System.out.println("Email: " + accountController.findAccountByEmail(email).getEmail());
+                            System.out.println("Password: " + accountController.findAccountByEmail(email).getPassword());
                             showSubMenu();
                             try {
                                 System.out.print("Nhập lựa chọn : ");
@@ -56,13 +58,19 @@ public class AccountUI {
                             switch (subOption) {
                                 case 1: {
                                     System.out.println("Nhập usename bạn muốn thay đổi");
-                                    String useName = sc.nextLine();
+                                    String useNameUpdate = sc.nextLine();
 
-                                    accountController.updateUserName(email,useName);
+                                    accountController.updateUserName(email,useNameUpdate);
                                     break;
                                 }
 
                                 case 2: {
+                                    System.out.println("Nhập email muốn thay đổi");
+                                    String emailUpdate = sc.nextLine();
+                                    accountController.updateEmail(email,emailUpdate);
+                                    if (!email.equals(emailUpdate)) {
+                                        email = emailUpdate;
+                                    }
                                     break;
                                 }
 
@@ -100,10 +108,20 @@ public class AccountUI {
                 }
 
                 case 2: {
+                    System.out.println("Nhập tài khoản:");
+                    String userName = sc.nextLine();
+                    System.out.println("Nhập email:");
+                    String email = sc.nextLine();
+                    System.out.println("Nhập mật khẩu: ");
+                    String password =sc.nextLine();
+                    accountController.createAccount(userName,email,password);
                     break;
                 }
 
                 case 3: {
+                    System.out.println("Nhập email xác thực");
+                    String email = sc.nextLine();
+                    accountController.forgotPassword(email);
                     break;
                 }
 

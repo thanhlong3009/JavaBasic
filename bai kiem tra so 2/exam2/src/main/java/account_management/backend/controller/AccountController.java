@@ -15,4 +15,8 @@ public class AccountController {
     public Account findAccountByEmail(String email) {
         return accountService.findAccountByEmail(email);
     }
+
+    public void updateUserName(String email, String useName) {
+        accountService.updateUserName(email,useName);
+    }
 }

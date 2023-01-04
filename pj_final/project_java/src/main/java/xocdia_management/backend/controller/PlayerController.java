@@ -2,6 +2,7 @@ package xocdia_management.backend.controller;
 
 import xocdia_management.backend.model.Player;
 import xocdia_management.backend.request.LoginRequest;
+import xocdia_management.backend.request.RegisterRequest;
 import xocdia_management.backend.service.PlayerService;
 import xocdia_management.frontend.PlayerPage;
 
@@ -22,5 +23,9 @@ public class PlayerController {
 
     public void deletePlayers(String userName) {
         playerService.deletePlayers(userName);
+    }
+
+    public void createPlayer(RegisterRequest registerRequest) {
+        playerService.createPlayer(registerRequest);
     }
 }

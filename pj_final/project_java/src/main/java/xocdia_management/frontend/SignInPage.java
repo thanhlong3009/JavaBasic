@@ -4,6 +4,7 @@ import xocdia_management.backend.controller.AdminController;
 import xocdia_management.backend.controller.PlayerController;
 import xocdia_management.backend.exception.NotFoundException;
 import xocdia_management.backend.request.LoginRequest;
+import xocdia_management.backend.request.RegisterRequest;
 
 import java.util.Scanner;
 
@@ -59,7 +60,17 @@ public class SignInPage {
                     break;
                 }
                 case 2 -> {
-                    
+                    System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
+                    System.out.println("Nhập tên tài khoản");
+                    String userName = sc.nextLine();
+                    System.out.println("Nhập email:");
+                    String email = sc.nextLine();
+                    System.out.println("Nhập mật khẩu:");
+                    String password = sc.nextLine();
+                    int accountBalance = 0;
+                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,accountBalance);
+
+                    playerController.createPlayer(registerRequest);
                     break;
                 }
                 case 3 -> {

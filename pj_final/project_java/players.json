@@ -1,0 +1,26 @@
+[
+  {
+    "userName": "long",
+    "email": "long@gmail.com",
+    "password": "1",
+    "accountBalance": 0
+  },
+  {
+    "userName": "long1",
+    "email": "long1@gmail.com",
+    "password": "1",
+    "accountBalance": 0
+  },
+  {
+    "userName": "long2",
+    "email": "long2@gmail.com",
+    "password": "1",
+    "accountBalance": 0
+  },
+  {
+    "userName": "long4",
+    "email": "long4@gmail.com",
+    "password": "1",
+    "accountBalance": 0
+  }
+]

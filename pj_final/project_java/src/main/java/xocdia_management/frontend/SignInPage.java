@@ -62,7 +62,6 @@ public class SignInPage {
                 }
                 case 2 -> {
                     System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
-                    System.out.println("akskahdkáhd");
                     System.out.println("Nhập tên tài khoản");
                     String userName = sc.nextLine();
                     System.out.println("Nhập email:");

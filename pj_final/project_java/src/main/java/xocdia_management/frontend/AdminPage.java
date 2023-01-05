@@ -32,7 +32,7 @@ public class AdminPage {
 
             switch (option) {
                 case 1: {
-                    List<Player> players = playerController.getPlayers();
+                    List<Player> players = adminController.getPlayers();
 
                     if (players.isEmpty()){
                         System.out.println("Không có người chơi nào tham gia trò chơi");
@@ -54,7 +54,7 @@ public class AdminPage {
                     System.out.println("Nhập username muốn xóa: ");
                     String userName = sc.nextLine();
                     try {
-                        playerController.deletePlayers(userName);
+                        adminController.deletePlayers(userName);
                     }catch (NotFoundException e) {
                         System.out.println(e.getMessage());
                     }

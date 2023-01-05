@@ -19,14 +19,6 @@ public class PlayerController {
     public Player findPlayerByEmail(String email) {
        return playerService.findPlayerByEmail(email);
     }
-    // lấy ra danh sách người chơi
-    public List<Player> getPlayers() {
-        return playerService.getPlayers();
-    }
-    // Xóa người chơi theo tên tài khoản
-    public void deletePlayers(String userName) {
-        playerService.deletePlayers(userName);
-    }
     // Tạo người chơi mới
     public void createPlayer(RegisterRequest registerRequest) {
         playerService.createPlayer(registerRequest);

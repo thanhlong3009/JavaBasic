@@ -19,7 +19,6 @@ public class PlayerService {
     public List<Player> getPlayers() {
         return playerRepository.findAll();
     }
-
     // Kiểm tra đăng nhập
     public boolean checkLogin(LoginRequest loginRequest) {
         for (Player p: players) {
@@ -29,7 +28,6 @@ public class PlayerService {
         }
         return false;
     }
-
     // Tìm thông tin người chưa theo email
     public Player findPlayerByEmail(String email) {
         Player player = new Player();
@@ -50,7 +48,6 @@ public class PlayerService {
         }
         return false;
     }
-
     // Kiểm tra tính hợp lệ của email
     public boolean checkEmailValidate(String email) {
         String EMAIL_PATTERN =
@@ -63,12 +60,6 @@ public class PlayerService {
     public boolean checkPassword(String password) {
         String PASSWORD_PATTERN = "[a-z A-Z0-9]{7,15}$";
         return Pattern.matches(PASSWORD_PATTERN, password);
-    }
-
-    // Xóa người chơi theo userName
-    public void deletePlayers(String userName) {
-        Player player = playerRepository.findPlayerByUserName(userName);
-        playerRepository.deletePlayers(player);
     }
 
     // tạo một tài khoản người chơi ( đăng ký)

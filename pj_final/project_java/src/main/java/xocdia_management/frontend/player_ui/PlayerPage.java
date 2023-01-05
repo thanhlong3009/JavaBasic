@@ -1,4 +1,4 @@
-package xocdia_management.frontend;
+package xocdia_management.frontend.player_ui;
 
 import xocdia_management.backend.controller.PlayerController;
 

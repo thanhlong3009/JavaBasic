@@ -9,7 +9,6 @@ import java.util.List;
 
 public class AdminRepository {
 
-
     public List<Admin> findAll() {
         return AdminDB.admins;
     }

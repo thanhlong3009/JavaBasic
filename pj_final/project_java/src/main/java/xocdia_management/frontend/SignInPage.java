@@ -3,8 +3,9 @@ package xocdia_management.frontend;
 import xocdia_management.backend.controller.AdminController;
 import xocdia_management.backend.controller.PlayerController;
 import xocdia_management.backend.exception.NotFoundException;
-import xocdia_management.backend.request.LoginRequest;
-import xocdia_management.backend.request.RegisterRequest;
+import xocdia_management.backend.repository.request.LoginRequest;
+import xocdia_management.backend.repository.request.RegisterRequest;
+import xocdia_management.frontend.player_ui.PlayerPage;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package xocdia_management.backend.request;
+package xocdia_management.backend.repository.request;
 
 import lombok.*;
 

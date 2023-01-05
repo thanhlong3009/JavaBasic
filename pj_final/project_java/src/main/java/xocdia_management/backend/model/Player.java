@@ -7,9 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Player {
-    private String userName;
-    private String email;
-    private String password;
+public class Player extends User{
     private int accountBalance = 0;
 }

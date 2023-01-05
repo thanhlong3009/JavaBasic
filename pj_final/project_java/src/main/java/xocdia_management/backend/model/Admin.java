@@ -5,10 +5,6 @@ import lombok.*;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
-public class Admin {
-    private String userName;
-    private String email;
-    private String password;
+public class Admin extends User{
 }

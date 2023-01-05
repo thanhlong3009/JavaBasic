@@ -1,10 +1,8 @@
 package xocdia_management.backend.service;
 
-import xocdia_management.backend.controller.AdminController;
-import xocdia_management.backend.exception.NotFoundException;
 import xocdia_management.backend.model.Admin;
 import xocdia_management.backend.repository.AdminRepository;
-import xocdia_management.backend.request.LoginRequest;
+import xocdia_management.backend.repository.request.LoginRequest;
 
 import java.util.List;
 

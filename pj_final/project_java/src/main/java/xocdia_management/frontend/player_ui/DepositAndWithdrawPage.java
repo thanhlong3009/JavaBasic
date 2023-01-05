@@ -1,9 +1,12 @@
-package xocdia_management.frontend;
+package xocdia_management.frontend.player_ui;
+
+import xocdia_management.backend.controller.PlayerController;
+import xocdia_management.backend.repository.request.DepositRequest;
 
 import java.util.Scanner;
 
 public class DepositAndWithdrawPage {
-
+    private final PlayerController playerController = new PlayerController();
     public void run(String email) {
         Scanner sc = new Scanner(System.in);
         int option = 0;
@@ -11,7 +14,7 @@ public class DepositAndWithdrawPage {
 
         while (!isQuit) {
 
-            System.out.println("--------- CỔNG NẠP RÚT TIỀN ----------");
+            System.out.print("--------- CỔNG NẠP RÚT TIỀN ----------");
             showMenuDepositAndWithdraw();
 
             try {
@@ -24,7 +27,10 @@ public class DepositAndWithdrawPage {
 
             switch (option) {
                 case 1: {
-
+                    System.out.println("Nhập số tiền bạn muốn nạp");
+                    int amountDeposit = Integer.parseInt(sc.nextLine());
+                    DepositRequest depositRequest = new DepositRequest(email,amountDeposit);
+                    playerController.depositPlayer(depositRequest);
                     break;
                 }
                 case 2: {
@@ -43,7 +49,7 @@ public class DepositAndWithdrawPage {
         }
     }
     public static void showMenuDepositAndWithdraw () {
-        System.out.println("\n********* PLAYER MENU *********");
+        System.out.println("\n********* DEPOSIT/WITHDRAW MENU *********");
         System.out.println("1 - Nạp tiền ");
         System.out.println("2 - rút tiền");
         System.out.println("3 - Quay lại");

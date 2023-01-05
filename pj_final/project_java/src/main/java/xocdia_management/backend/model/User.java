@@ -1,15 +1,14 @@
-package xocdia_management.backend.request;
+package xocdia_management.backend.model;
 
 import lombok.*;
 
-@Getter
 @Setter
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
-public class RegisterRequest {
+public class User {
     private String userName;
     private String email;
     private String password;
-    private int accountBalance = 0;
 }

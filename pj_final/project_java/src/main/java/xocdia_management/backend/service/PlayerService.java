@@ -2,8 +2,9 @@ package xocdia_management.backend.service;
 
 import xocdia_management.backend.model.Player;
 import xocdia_management.backend.repository.PlayerRepository;
-import xocdia_management.backend.request.LoginRequest;
-import xocdia_management.backend.request.RegisterRequest;
+import xocdia_management.backend.repository.request.DepositRequest;
+import xocdia_management.backend.repository.request.LoginRequest;
+import xocdia_management.backend.repository.request.RegisterRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,5 +87,12 @@ public class PlayerService {
         }else {
             System.out.println("Đăng ký không hợp lệ, vui lòng thử lại!");
         }
+    }
+
+//    public boolean check
+
+    // Nạp tiền người chơi theo email.
+    public void depositPlayer(DepositRequest depositRequest) {
+
     }
 }

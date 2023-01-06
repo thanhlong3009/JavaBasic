@@ -32,6 +32,7 @@ public class DepositAndWithdrawPage {
 
             switch (option) {
                 case 1: {
+                    System.out.println("\n ---- NẠP TIỀN ---");
                     int amountDeposit;
                     try {
                         System.out.println("Nhập số tiền bạn muốn nạp( Số tiền nạp trong khoản 1 - 99999)");
@@ -50,7 +51,7 @@ public class DepositAndWithdrawPage {
                         boolean subIsQuit = false;
                         // Menu xác nhận thanh toán
                         while (!subIsQuit) {
-                            System.out.println("--- Xác nhận thanh toán ---");
+                            System.out.println("\n--- XÁC NHẬN THANH TOÁN ---");
                             System.out.println("1. Thanh toán thành công");
                             System.out.println("0. Hủy thanh toán, quay lại");
 
@@ -87,7 +88,9 @@ public class DepositAndWithdrawPage {
 
                 }
                 case 2: {
+                    System.out.println("\n---- RÚT TIỀN ----");
                     System.out.println("Bạn có thể rút tiền nhỏ hoặc bằng " + player.getAccountBalance());
+                    System.out.println("Hạn mức rút tối đa cho mỗi lần rút tiền là 99999");
                     int amountWithdraw = 0;
                     try {
                         System.out.println("Nhập số tiền bạn muốn rút");
@@ -110,7 +113,7 @@ public class DepositAndWithdrawPage {
                                     boolean subIsQuit = false;
                                     // Menu xác nhận thanh toán
                                     while (!subIsQuit) {
-                                        System.out.println("--- Xác nhận thanh toán ---");
+                                        System.out.println("\n--- XÁC NHẬN THANH TOÁN ---");
                                         System.out.println("1. Xác nhận rút tiền");
                                         System.out.println("0. Hủy thanh toán, quay lại");
 
@@ -151,6 +154,8 @@ public class DepositAndWithdrawPage {
                         }
                         // TODO: làm tương tự nạp tiền, thêm mục nhập lại mật khẩu rút tiền, nhập mã otp và sau đó xác nhận1
 
+                    }else {
+                        System.out.println("Nhập số tiền không hợp lệ, quay lại");
                     }
                     break;
                 }

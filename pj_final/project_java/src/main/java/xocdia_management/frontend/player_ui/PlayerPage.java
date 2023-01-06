@@ -32,7 +32,7 @@ public class PlayerPage {
 
             switch (option) {
                 case 1: {
-                    System.out.println("------ ĐÂY LÀ HUỚNG DẪN SỬ DỤNG ------");
+                    System.out.println("\n------ ĐÂY LÀ HUỚNG DẪN SỬ DỤNG ------");
                     System.out.println("1. Khi bắt đầu chơi nhà cái sẽ để các đồng xu nằm sâu vào bên trong bát và sau đó tiến hành xóc.");
                     System.out.println("2. Đặt cược cửa chẵn: khi người chơi đặt cược ở cửa này sẽ có thể ăn tiền nếu kết quả cho ra 4 đồng đỏ, 4 đồng trắng hoặc 2 đồng đỏ – 2 đồng trắng.");
                     System.out.println("3. Cược cửa lẻ: khi đặt ở cửa này nếu kết quả cho ra 1 đồng trắng – 3 đồng đỏ hoặc 1 đồng đỏ – 3 đồng trắng thì người chơi sẽ giành chiến thắng.");

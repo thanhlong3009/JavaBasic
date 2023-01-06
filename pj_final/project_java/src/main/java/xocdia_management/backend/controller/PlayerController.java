@@ -22,13 +22,12 @@ public class PlayerController {
     public void createPlayer(RegisterRequest registerRequest) {
         playerService.createPlayer(registerRequest);
     }
-
-
     // Cộng tiền vào tài khoản, từ việc nạp
     public void depositPlayer(DepositRequest depositRequest) {
         playerService.depositPlayer(depositRequest.getEmail(),depositRequest.getAmountDeposit());
     }
 
+    // Kiểm tra số tiền có
     public boolean checkAmount(int amountDeposit) {
         return playerService.checkAmount(amountDeposit);
     }
@@ -37,13 +36,11 @@ public class PlayerController {
     public void withdrawPlayer(WithdrawRequest withdrawRequest) {
          playerService.withdrawPlayer(withdrawRequest.getEmail(),withdrawRequest.getAmountWithdraw());
     }
-
-
     // trừ tiền từ tài khoản của bạn, cuợc thua
     public void loseBet(String email, int amountBet) {
         playerService.withdrawPlayer(email,amountBet);
     }
-
+    // Cộng tiền vào tài khoản, cuợc thắng
     public void winBet(String email, int amountBetWin) {
         playerService.depositPlayer(email,amountBetWin);
     }

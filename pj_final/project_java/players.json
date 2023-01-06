@@ -1,6 +1,6 @@
 [
   {
-    "accountBalance": 499958,
+    "accountBalance": 299960,
     "passwordWithdaw": "1",
     "userName": "long",
     "email": "long",
@@ -30,22 +30,15 @@
   {
     "accountBalance": 0,
     "passwordWithdaw": "1",
-    "userName": "Manucians",
-    "email": "thanhlongite6@gmail.com",
-    "password": "123454321"
-  },
-  {
-    "accountBalance": 0,
-    "passwordWithdaw": "1",
     "userName": "shenlongisme",
     "email": "thanhlong4@gmail.com",
     "password": "12344321"
   },
   {
     "accountBalance": 0,
-    "passwordWithdaw": "12345678",
-    "userName": "shenlong la tao",
-    "email": "shenlonglatao@gmail.com",
-    "password": "shenlonglatao"
+    "passwordWithdaw": "123454321",
+    "userName": "longlatone",
+    "email": "thanhlong@gmail.com",
+    "password": "123454321"
   }
 ]

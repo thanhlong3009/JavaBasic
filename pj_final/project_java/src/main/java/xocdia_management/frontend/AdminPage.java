@@ -20,7 +20,8 @@ public class AdminPage {
         boolean isQuit = false;
 
         while (!isQuit) {
-            System.out.printf("\nChào mừng %s (Admin), bạn có thể thực hiện các công việc sau: \n", adminController.findAdminByEmail(email).getUserName());
+            System.out.println("********* ADMIN PAGE *********");
+            System.out.printf("Chào mừng %s(Admin), bạn có thể thực hiện các công việc sau: \n", adminController.findAdminByEmail(email).getUserName());
             showMenu();
             try {
                 System.out.print("Nhập lựa chọn : ");
@@ -37,30 +38,31 @@ public class AdminPage {
                     if (players.isEmpty()){
                         System.out.println("Không có người chơi nào tham gia trò chơi");
                     }else {
-                        System.out.println("--- DANH SÁCH TÀI KHOẢN ĐĂNG KÝ GAME XÓC ĐĨA ---");
-                        System.out.printf("%-15s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        System.out.println("\n----- DANH SÁCH TÀI KHOẢN ĐĂNG KÝ GAME TÀI XỈU -----");
+                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
                         for (Player p:players) {
-                            System.out.printf("%-15s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
                         }
                     }
-                    System.out.println("Nhấn 0 + Enter để quay lại");
-                    int subOption = 0;
-                    subOption = Integer.parseInt(sc.nextLine());
-                    if (subOption == 0) {
-                        break;
-                    }
+                    System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                    String out = sc.nextLine();
+                    break;
+
                 }
                 case 2: {
+                    System.out.println("\n---- XÓA NGƯỜI CHƠI THEO USERNAME ----");
                     System.out.println("Nhập username muốn xóa: ");
                     String userName = sc.nextLine();
                     try {
                         adminController.deletePlayers(userName);
+                        System.out.println("Đã xóa thành công người chơi có username là \n" + userName);
                     }catch (NotFoundException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
                 }
                 case 3: {
+                    System.out.println(" Đăng xuất khỏi tài khoản admin");
                     isQuit = true;
                     break;
                 }
@@ -74,7 +76,6 @@ public class AdminPage {
     }
 
     public static void showMenu() {
-        System.out.println("********* ADMIN MENU *********");
         System.out.println("1 - Xem danh sách người chơi ");
         System.out.println("2 - Xóa người chơi ");
         System.out.println("3 - Đăng xuất");

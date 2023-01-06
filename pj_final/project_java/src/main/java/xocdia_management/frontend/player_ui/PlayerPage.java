@@ -19,7 +19,8 @@ public class PlayerPage {
         boolean isQuit = false;
 
         while (!isQuit) {
-            System.out.printf("\nChào mừng %s, bạn có thể thực hiện các công việc sau: \n", playerController.findPlayerByEmail(email).getUserName());
+            System.out.println("\n-------- PLAYER PAGE -----------");
+            System.out.printf("Chào mừng %s, bạn có thể thực hiện các công việc sau:\n", playerController.findPlayerByEmail(email).getUserName());
             showMenuPlayer();
 
             try {
@@ -33,10 +34,15 @@ public class PlayerPage {
             switch (option) {
                 case 1: {
                     System.out.println("\n------ ĐÂY LÀ HUỚNG DẪN SỬ DỤNG ------");
-                    System.out.println("1. Khi bắt đầu chơi nhà cái sẽ để các đồng xu nằm sâu vào bên trong bát và sau đó tiến hành xóc.");
-                    System.out.println("2. Đặt cược cửa chẵn: khi người chơi đặt cược ở cửa này sẽ có thể ăn tiền nếu kết quả cho ra 4 đồng đỏ, 4 đồng trắng hoặc 2 đồng đỏ – 2 đồng trắng.");
-                    System.out.println("3. Cược cửa lẻ: khi đặt ở cửa này nếu kết quả cho ra 1 đồng trắng – 3 đồng đỏ hoặc 1 đồng đỏ – 3 đồng trắng thì người chơi sẽ giành chiến thắng.");
-                    System.out.println();
+                    System.out.println("1. Khi bắt đầu chơi nhà cái sẽ tung 3 con xúc xắc và tính điểm");
+                    System.out.println("2. Kết quả trả về Xỉu (nếu tổng điểm 3 xúc xắc nhỏ hơn bằng 10), trả về Tài(nếu kết quả lớn hơn 10).");
+                    System.out.println("3. Bạn sẽ chọn số tiền đặt cuợc và dự đoán kết quả Tài hay Xỉu.");
+                    System.out.println("     + Nếu dự đoán đúng, bạn nhận về 100% số tiền cuợc với phí cuợc là 2 điểm.");
+                    System.out.println("     + Nếu dự đoán sai, bạn sẽ mất 100% số tiền cuợc và không mất phí cược");
+                    System.out.println("4. Tiền cá cược sẽ ngay lập tức được chuyển vào số dư của bạn sau khi hết ván.");
+                    System.out.println("\n Nếu bạn còn có gì thắc mắc hãy liên hệ ngay đến hotline: 8888.8888 .\n");
+                    System.out.println("--------- HẾT -----------\n");
+
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
                     String subOption =sc.nextLine();
                     break;
@@ -77,7 +83,6 @@ public class PlayerPage {
     }
 
     public static void showMenuPlayer() {
-        System.out.println("\n********* PLAYER MENU *********");
         System.out.println("1 - Hướng dẫn ");
         System.out.println("2 - Bắt đầu đốt tiền");
         System.out.println("3 - Nạp/Rút tiền");

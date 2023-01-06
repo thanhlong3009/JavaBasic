@@ -21,16 +21,6 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
-    // Kiểm tra đăng nhập
-    public boolean checkLogin(LoginRequest loginRequest) {
-        for (Player p : players) {
-            if (p.getEmail().equals(loginRequest.getEmail()) && p.getPassword().equals(loginRequest.getPassword())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     // Tìm thông tin người chưa theo email
     public Player findPlayerByEmail(String email) {
         Player player = new Player();
@@ -41,38 +31,6 @@ public class PlayerService {
         }
         return player;
     }
-
-    // kiểm tra email đã tồn tại chưa
-    public boolean checkEmailExist(String email) {
-        for (Player p : players) {
-            if (p.getEmail().equals(email)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Kiểm tra tính hợp lệ của email
-    public boolean checkEmailValidate(String email) {
-        String EMAIL_PATTERN =
-                "^[a-zA-Z][\\w-]+@([\\w]{5}+\\.[\\w]{3,}+|[\\w]{5}+\\.[\\w]{3,}\\.[\\w]{2,})$";
-
-        return Pattern.matches(EMAIL_PATTERN, email);
-    }
-
-    // kiểm tra tính hợp lệ của mật khẩu
-    public boolean checkPassword(String password) {
-
-        String PASSWORD_PATTERN = "[a-z A-Z0-9]{7,15}$";
-        return Pattern.matches(PASSWORD_PATTERN, password);
-    }
-
-    // TODO : chưa tìm được cách để mật khẩu rút tiền chỉ chứa 4 ký tự số
-    public boolean checkPasswordWithdraw(String passwordWithdaw) {
-        String PASSWORD_WITHDRAW_PATTERN = "[0,9]{4}$";
-        return Pattern.matches(PASSWORD_WITHDRAW_PATTERN, passwordWithdaw);
-    }
-
     // tạo một tài khoản người chơi ( đăng ký)
     public void createPlayer(RegisterRequest registerRequest) {
         if (!checkEmailExist(registerRequest.getEmail()) && checkEmailValidate(registerRequest.getEmail()) && checkPassword(registerRequest.getPassword()) && checkPassword(registerRequest.getPasswordWithdaw())) {
@@ -91,22 +49,14 @@ public class PlayerService {
             System.out.println("Đăng ký không hợp lệ, vui lòng thử lại!");
         }
     }
-
-
-    public boolean checkAmount(int amountDeposit) {
-        String rs = String.valueOf(amountDeposit);
-        String AMOUNT_PATTERN = "[0-9]{0,5}$";
-        return Pattern.matches(AMOUNT_PATTERN, rs);
-    }
-
-    // Nạp tiền người chơi theo email.
+    // Cộng tiền người chơi(nạp or win) theo email.
     public void depositPlayer(String email, int  amountDeposit) {
         Player player = findPlayerByEmail(email);
         int rs = player.getAccountBalance() + amountDeposit;
         player.setAccountBalance(rs);
         playerRepository.updateFiles();
     }
-
+    // Trừ tiền người chơi(rút or lose) theo email
     public void withdrawPlayer(String email, int amountWithdraw) {
         Player player = findPlayerByEmail(email);
         int rs = player.getAccountBalance() - amountWithdraw;
@@ -114,6 +64,55 @@ public class PlayerService {
         playerRepository.updateFiles();
     }
 
-    // Kết quả cá cược đưa ra từ nhà cái (xúc 3 con xúc xắc)
+                         // ---------------- CÁC HÀM CHECK ---------------
 
+                                        // Kiểm tra đăng nhập
+    public boolean checkLogin(LoginRequest loginRequest) {
+        for (Player p : players) {
+            if (p.getEmail().equals(loginRequest.getEmail()) && p.getPassword().equals(loginRequest.getPassword())) {
+                return true;
+            }
+        }
+        return false;
+    }
+                                        // kiểm tra email đã tồn tại chưa
+    public boolean checkEmailExist(String email) {
+        for (Player p : players) {
+            if (p.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
+    }
+                                        // Kiểm tra tính hợp lệ của email
+
+    public boolean checkEmailValidate(String email) {
+        String EMAIL_PATTERN =
+                "^[a-zA-Z][\\w-]+@([\\w]{5}+\\.[\\w]{3,}+|[\\w]{5}+\\.[\\w]{3,}\\.[\\w]{2,})$";
+
+        return Pattern.matches(EMAIL_PATTERN, email);
+    }
+                                        // kiểm tra tính hợp lệ của mật khẩu
+            // có thể là các chữ các hoa thuờng hay chữ số, từ 7-15 ký tự
+    public boolean checkPassword(String password) {
+
+        String PASSWORD_PATTERN = "[a-z A-Z0-9]{7,15}$";
+        return Pattern.matches(PASSWORD_PATTERN, password);
+    }
+                                        // Kiểm tra tính hợp lệ của mật khẩu rút tiền => 4 chữ số
+
+    // TODO : chưa tìm được cách để mật khẩu rút tiền chỉ chứa 4 ký tự số
+    public boolean checkPasswordWithdraw(String passwordWithdaw) {
+        String PASSWORD_WITHDRAW_PATTERN = "[0,9]{4}$";
+        return Pattern.matches(PASSWORD_WITHDRAW_PATTERN, passwordWithdaw);
+    }
+
+                                        // Kiểm tra số tiền nạp hoặc rút có hợp lệ không
+                                        // là các chữ số và có từ 0 - 5 chữ số
+    public boolean checkAmount(int amountDeposit) {
+        String rs = String.valueOf(amountDeposit);
+        String AMOUNT_PATTERN = "[0-9]{0,5}$";
+        return Pattern.matches(AMOUNT_PATTERN, rs);
+    }
 }
+

@@ -14,8 +14,8 @@ public class PlayerRepository {
         return PlayerDB.players;
     }
 
-    public void updateFiles(ArrayList<Player> players) {
-        FileUtils.setDataToFileP("players.json" , players);
+    public void updateFiles() {
+        FileUtils.setDataToFileP("players.json" , findAll());
     }
 
     public Player findPlayerByUserName(String userName) {

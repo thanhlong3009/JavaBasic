@@ -4,7 +4,7 @@ import xocdia_management.backend.model.Admin;
 import xocdia_management.backend.model.Player;
 import xocdia_management.backend.repository.AdminRepository;
 import xocdia_management.backend.repository.PlayerRepository;
-import xocdia_management.backend.repository.request.LoginRequest;
+import xocdia_management.backend.request.LoginRequest;
 
 import java.util.List;
 

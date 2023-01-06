@@ -47,7 +47,6 @@ public class FileUtils {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Paths.get(fileName));
 
-            // TODO : Đang có vấn đề ở đây - Lỗi khi file trống
             Type type = new TypeToken<ArrayList<Admin>>(){}.getType();
             ArrayList<Admin> admins = gson.fromJson(reader, type);
 

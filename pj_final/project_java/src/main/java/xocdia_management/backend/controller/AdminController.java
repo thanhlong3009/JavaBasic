@@ -2,7 +2,7 @@ package xocdia_management.backend.controller;
 
 import xocdia_management.backend.model.Admin;
 import xocdia_management.backend.model.Player;
-import xocdia_management.backend.repository.request.LoginRequest;
+import xocdia_management.backend.request.LoginRequest;
 import xocdia_management.backend.service.AdminService;
 
 import java.util.List;

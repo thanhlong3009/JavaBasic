@@ -1,4 +1,4 @@
-package xocdia_management.backend.repository.request;
+package xocdia_management.backend.request;
 
 import lombok.*;
 
@@ -11,5 +11,6 @@ public class RegisterRequest {
     private String userName;
     private String email;
     private String password;
+    private String passwordWithdaw;
     private int accountBalance = 0;
 }

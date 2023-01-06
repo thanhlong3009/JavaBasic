@@ -1,12 +1,11 @@
 package xocdia_management.backend.controller;
 
 import xocdia_management.backend.model.Player;
-import xocdia_management.backend.repository.request.DepositRequest;
-import xocdia_management.backend.repository.request.LoginRequest;
-import xocdia_management.backend.repository.request.RegisterRequest;
+import xocdia_management.backend.request.DepositRequest;
+import xocdia_management.backend.request.LoginRequest;
+import xocdia_management.backend.request.RegisterRequest;
+import xocdia_management.backend.request.WithdrawRequest;
 import xocdia_management.backend.service.PlayerService;
-
-import java.util.List;
 
 public class PlayerController {
     private static final PlayerService playerService = new PlayerService();
@@ -27,5 +26,17 @@ public class PlayerController {
 
     public void depositPlayer(DepositRequest depositRequest) {
         playerService.depositPlayer(depositRequest);
+    }
+
+    public boolean checkAmount(int amountDeposit) {
+        return playerService.checkAmount(amountDeposit);
+    }
+
+    public void withdrawPlayer(WithdrawRequest withdrawRequest) {
+         playerService.withdrawPlayer(withdrawRequest);
+    }
+
+    public int betting() {
+        return playerService.betting();
     }
 }

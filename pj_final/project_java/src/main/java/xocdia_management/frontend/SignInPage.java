@@ -3,8 +3,8 @@ package xocdia_management.frontend;
 import xocdia_management.backend.controller.AdminController;
 import xocdia_management.backend.controller.PlayerController;
 import xocdia_management.backend.exception.NotFoundException;
-import xocdia_management.backend.repository.request.LoginRequest;
-import xocdia_management.backend.repository.request.RegisterRequest;
+import xocdia_management.backend.request.LoginRequest;
+import xocdia_management.backend.request.RegisterRequest;
 import xocdia_management.frontend.player_ui.PlayerPage;
 
 import java.util.Scanner;
@@ -68,8 +68,10 @@ public class SignInPage {
                     String email = sc.nextLine();
                     System.out.println("Nhập mật khẩu:");
                     String password = sc.nextLine();
+                    System.out.println("Nhập mật khẩu rút tiền");
+                    String passwordWithdaw = sc.nextLine();
                     int accountBalance = 0;
-                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,accountBalance);
+                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
 
                     playerController.createPlayer(registerRequest);
                     break;
@@ -89,7 +91,9 @@ public class SignInPage {
         }
     }
     public static void showMenuSignIn() {
-        System.out.println("\n********* SIGN UP MENU *********");
+        System.out.println("---- SHENLONG_NHÀ CÁI CÁ CƯỢC UY TÍN SỐ MỘT ĐÔNG DƯƠNG ----");
+        System.out.println("--- Chào mừng bạn đến với GAME TÀI XỈU ---");
+        System.out.println();
         System.out.println("1 - Đăng nhập ");
         System.out.println("2 - Đăng ký");
         System.out.println("3 - Quên mật khẩu");

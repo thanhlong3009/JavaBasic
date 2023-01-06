@@ -100,29 +100,20 @@ public class PlayerService {
     }
 
     // Nạp tiền người chơi theo email.
-    public void depositPlayer(DepositRequest depositRequest) {
-        Player player = findPlayerByEmail(depositRequest.getEmail());
-        int rs = player.getAccountBalance() + depositRequest.getAmountDeposit();
+    public void depositPlayer(String email, int  amountDeposit) {
+        Player player = findPlayerByEmail(email);
+        int rs = player.getAccountBalance() + amountDeposit;
         player.setAccountBalance(rs);
         playerRepository.updateFiles();
     }
 
-    public void withdrawPlayer(WithdrawRequest withdrawRequest) {
-        Player player = findPlayerByEmail(withdrawRequest.getEmail());
-        int rs = player.getAccountBalance() - withdrawRequest.getAmountWithdraw();
+    public void withdrawPlayer(String email, int amountWithdraw) {
+        Player player = findPlayerByEmail(email);
+        int rs = player.getAccountBalance() - amountWithdraw;
         player.setAccountBalance(rs);
         playerRepository.updateFiles();
     }
 
     // Kết quả cá cược đưa ra từ nhà cái (xúc 3 con xúc xắc)
-    public int betting() {
-        Random dice = new Random();
 
-        int dice1 = dice.nextInt(5) + 1;
-        int dice2 = dice.nextInt(5) + 1;
-        int dice3 = dice.nextInt(5) + 1;
-
-        return  dice3 + dice1 + dice2;
-
-    }
 }

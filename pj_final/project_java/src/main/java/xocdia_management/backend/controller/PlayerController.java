@@ -24,19 +24,27 @@ public class PlayerController {
     }
 
 
+    // Cộng tiền vào tài khoản, từ việc nạp
     public void depositPlayer(DepositRequest depositRequest) {
-        playerService.depositPlayer(depositRequest);
+        playerService.depositPlayer(depositRequest.getEmail(),depositRequest.getAmountDeposit());
     }
 
     public boolean checkAmount(int amountDeposit) {
         return playerService.checkAmount(amountDeposit);
     }
 
+    // Trừ tiền từ tài khoạn, từ việc rút
     public void withdrawPlayer(WithdrawRequest withdrawRequest) {
-         playerService.withdrawPlayer(withdrawRequest);
+         playerService.withdrawPlayer(withdrawRequest.getEmail(),withdrawRequest.getAmountWithdraw());
     }
 
-    public int betting() {
-        return playerService.betting();
+
+    // trừ tiền từ tài khoản của bạn, cuợc thua
+    public void loseBet(String email, int amountBet) {
+        playerService.withdrawPlayer(email,amountBet);
+    }
+
+    public void winBet(String email, int amountBetWin) {
+        playerService.depositPlayer(email,amountBetWin);
     }
 }

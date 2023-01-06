@@ -36,6 +36,7 @@ public class SignInPage {
 
             switch (option) {
                 case 1 -> {
+                    System.out.println("\n ---- ĐĂNG NHẬP TÀI KHOẢN ----");
                     System.out.println("Nhập email");
                     String email = sc.nextLine();
                     System.out.println("Nhập mật khẩu");
@@ -51,7 +52,7 @@ public class SignInPage {
                             System.out.println("Đăng nhập thành công");
                             playerPage.run(email);
                         }else {
-                            System.out.println("Tài khoản hoặc mật khẩu nhập không chính xác, nhập lại!");
+                            System.out.println("Tài khoản hoặc mật khẩu nhập không chính xác, trở lại!\n");
                         }
 
                     } catch (NotFoundException e) {

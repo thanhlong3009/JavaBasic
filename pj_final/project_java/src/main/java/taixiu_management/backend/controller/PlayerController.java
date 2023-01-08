@@ -49,4 +49,8 @@ public class PlayerController {
     public boolean checkEmailExist(String email) {
         return playerService.checkEmailExist(email);
     }
+
+    public boolean checkAccountBalance(String email) {
+        return playerService.checkAccountBalance(email);
+    }
 }

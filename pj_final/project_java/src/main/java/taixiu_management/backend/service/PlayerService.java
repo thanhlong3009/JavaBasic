@@ -30,20 +30,25 @@ public class PlayerService {
 
     // tạo một tài khoản người chơi ( đăng ký)
     public void createPlayer(RegisterRequest registerRequest) {
-        if (!checkEmailExist(registerRequest.getEmail()) && checkEmailValidate(registerRequest.getEmail()) && checkPassword(registerRequest.getPassword()) && checkPassword(registerRequest.getPasswordWithdaw())) {
-            Player player = new Player();
-            player.setEmail(registerRequest.getEmail());
-            player.setPassword(registerRequest.getPassword());
-            player.setUserName(registerRequest.getUserName());
-            player.setAccountBalance(registerRequest.getAccountBalance());
-            player.setPasswordWithdaw(registerRequest.getPasswordWithdaw());
+        if (!checkEmailExist(registerRequest.getEmail()) && checkEmailValidate(registerRequest.getEmail())) {
+            if (checkPassword(registerRequest.getPassword()) && checkPasswordWithdraw(registerRequest.getPasswordWithdaw())) {
+                Player player = new Player();
+                player.setEmail(registerRequest.getEmail());
+                player.setPassword(registerRequest.getPassword());
+                player.setUserName(registerRequest.getUserName());
+                player.setAccountBalance(registerRequest.getAccountBalance());
+                player.setPasswordWithdaw(registerRequest.getPasswordWithdaw());
 
-            players.add(player);
+                players.add(player);
 
-            playerRepository.updateFiles();
-            System.out.println("Tạo tài khoản thành công");
+                playerRepository.updateFiles();
+                System.out.println("Tạo tài khoản thành công");
+            }
+            else {
+                System.out.println("Mật khẩu hoặc mật khẩu thanh toán không hợp lệ");
+            }
         } else {
-            System.out.println("Đăng ký không hợp lệ, vui lòng thử lại!");
+            System.out.println("Email không hợp lệ");
         }
     }
 
@@ -113,7 +118,7 @@ public class PlayerService {
     }
     // Kiểm tra tính hợp lệ của mật khẩu rút tiền => 4 chữ số
 
-    // TODO : chưa tìm được cách để mật khẩu rút tiền chỉ chứa 4 ký tự số
+    // TODO : chưa tìm được cách để mật khẩu rút tiền chỉ chứa 4 ký tự số, test riêng đúng nhưng trong bài lại sai
     public boolean checkPasswordWithdraw(String passwordWithdaw) {
         String PASSWORD_WITHDRAW_PATTERN = "[0,9]{4}$";
         return Pattern.matches(PASSWORD_WITHDRAW_PATTERN, passwordWithdaw);
@@ -127,6 +132,13 @@ public class PlayerService {
         return Pattern.matches(AMOUNT_PATTERN, rs);
     }
 
-
+    // Kiểm tra số dư tài khoản có lớn hơn 3 không, để tham gia cá cuợc
+    public boolean checkAccountBalance(String email) {
+        Player player = findPlayerByEmail(email);
+        if (player.getAccountBalance() > 3) {
+            return true;
+        }
+        return false;
+    }
 }
 

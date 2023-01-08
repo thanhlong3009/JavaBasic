@@ -50,7 +50,11 @@ public class PlayerPage {
                     break;
                 }
                 case 2: {
-                    playGamePage.run(email);
+                    if (playerController.checkAccountBalance(email)){
+                        playGamePage.run(email);
+                    }else {
+                        System.out.println("Số dư tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng na thêm tiền!!");
+                    }
                     break;
                 }
                 case 3: {

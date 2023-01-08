@@ -40,16 +40,17 @@ public class PlayerController {
     public void winBet(String email, int amountBetWin) {
         playerService.depositPlayer(email,amountBetWin);
     }
-
-
+    // Check password có hợp lệ không
     public void changePassword(ChangePasswordRequest changePasswordRequest) {
         playerService.changePassword(changePasswordRequest);
     }
 
+    // Check email đã tồn tại chưa
     public boolean checkEmailExist(String email) {
         return playerService.checkEmailExist(email);
     }
 
+    // Check số dư tài khoản để chơi game
     public boolean checkAccountBalance(String email) {
         return playerService.checkAccountBalance(email);
     }

@@ -103,9 +103,12 @@ public class PlayerService {
     // Kiểm tra tính hợp lệ của email
 
     public boolean checkEmailValidate(String email) {
-        String EMAIL_PATTERN =
-                "^[a-zA-Z][\\w-]+@([\\w]{5}+\\.[\\w]{3,}+|[\\w]{5}+\\.[\\w]{3,}\\.[\\w]{2,})$";
-
+        //        Định nghĩa email:
+//        - Bắt đầu bằng chữ cái.
+//        - Chỉ chứa chữ cái, chữ số và dấu gạch ngang (-)
+//        - Chứa một ký tự @, sau @ là tên miền.
+//        - Tên miền có thể là domain.xxx.yyy hoặc domain.xxx. Trong đó xxx và yyy là các chữ cái và có độ dài từ 2 trở lên.
+        String EMAIL_PATTERN =  "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         return Pattern.matches(EMAIL_PATTERN, email);
     }
 

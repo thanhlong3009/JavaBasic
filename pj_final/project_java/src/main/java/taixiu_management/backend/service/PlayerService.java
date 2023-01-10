@@ -9,6 +9,7 @@ import taixiu_management.backend.request.*;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.RecursiveTask;
 import java.util.regex.Pattern;
 
 public class PlayerService {
@@ -36,7 +37,7 @@ public class PlayerService {
     // tạo một tài khoản người chơi ( đăng ký)
     public void createPlayer(RegisterRequest registerRequest) {
         if (!checkEmailExist(registerRequest.getEmail()) && checkEmailValidate(registerRequest.getEmail())) {
-            if (checkPassword(registerRequest.getPassword()) && checkPasswordWithdraw(registerRequest.getPasswordWithdaw())) {
+            if (checkPassword(registerRequest.getPassword()) && checkPasswordWithdraw(registerRequest.getPasswordWithdaw()) && checkUserName(registerRequest.getUserName())) {
                 Player player = new Player();
                 player.setEmail(registerRequest.getEmail());
                 player.setPassword(registerRequest.getPassword());
@@ -48,8 +49,7 @@ public class PlayerService {
 
                 playerRepository.updateFiles();
                 System.out.println("Tạo tài khoản thành công");
-            }
-            else {
+            } else {
                 System.out.println("Mật khẩu hoặc mật khẩu thanh toán không hợp lệ");
             }
         } else {
@@ -84,7 +84,14 @@ public class PlayerService {
             System.out.println("Mật khẩu mới không hợp lệ, quay lại!!");
         }
     }
-    // ---------------- CÁC HÀM CHECK ---------------
+
+    // lấy ra danh sách admin
+    public List<Admin> getAdmins() {
+        return adminRepository.findAll();
+    }
+
+
+    // --------------------------------- CÁC METHOD CHECK -------------------------------------
 
     // Kiểm tra đăng nhập
     public boolean checkLogin(LoginRequest loginRequest) {
@@ -113,8 +120,14 @@ public class PlayerService {
 //        - Chỉ chứa chữ cái, chữ số và dấu gạch ngang (-)
 //        - Chứa một ký tự @, sau @ là tên miền.
 //        - Tên miền có thể là domain.xxx.yyy hoặc domain.xxx. Trong đó xxx và yyy là các chữ cái và có độ dài từ 2 trở lên.
-        String EMAIL_PATTERN =  "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
+        String EMAIL_PATTERN = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         return Pattern.matches(EMAIL_PATTERN, email);
+    }
+
+    // Kiểm tra tên người dùng (username) --- từ 4 đến 15 ký tự số và chữ
+    public boolean checkUserName(String userName) {
+        String USERNAME_PATTERN = "[a-z A-Z0-9]{4,15}$";
+        return Pattern.matches(USERNAME_PATTERN,userName);
     }
 
     // kiểm tra tính hợp lệ của mật khẩu
@@ -151,7 +164,7 @@ public class PlayerService {
 
     // check bảng xếp hạng
     public List<Player> getRankings() {
-        Collections.sort(players,new Comparator<Player>() {
+        Collections.sort(players, new Comparator<Player>() {
             @Override
             public int compare(Player o1, Player o2) {
                 //Sử dụng toán tử 3 ngôi
@@ -161,9 +174,6 @@ public class PlayerService {
 
         return players;
     }
-    // lấy ra danh sách admin
-    public List<Admin> getAdmins() {
-        return adminRepository.findAll();
-    }
+
 }
 

@@ -77,6 +77,8 @@ public class SignInPage {
                     RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
 
                     playerController.createPlayer(registerRequest);
+
+
                     break;
                 }
                 case 3 -> {

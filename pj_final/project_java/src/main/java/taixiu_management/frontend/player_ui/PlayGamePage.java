@@ -81,7 +81,7 @@ public class PlayGamePage {
                             playerController.loseBet(email,amountBet);
                         }else {
                             System.out.println("Bạn chọn Xỉu => Cược thắng, bạn thắng 100% số tiền cuợc với phí cá cược 2 điểm");
-                            System.out.println("-- CHÚC MỪNG --\n");
+                            System.out.println("-- CHÚC MỪNG CON BẠC --\n");
                             int amountBetWin = amountBet - 2;
                             playerController.winBet(email,amountBetWin);
                         }

@@ -8,23 +8,17 @@ import taixiu_management.backend.utlis.FileUtils;
 import java.util.List;
 
 public class PlayerRepository {
+
+    // Lấy ra danh sách người chơi từ DB
     public List<Player> findAll() {
         return PlayerDB.players;
     }
 
+    // update thông tin người chơi
     public void updateFiles() {
         FileUtils.setDataToFileP("players.json" , findAll());
     }
-
-    public Player findPlayerByUserName(String userName) {
-        for (Player p :PlayerDB.players) {
-            if (p.getUserName().equals(userName)) {
-                return p;
-            }
-        }
-        throw new NotFoundException("Không tìm thấy người chơi");
-    }
-
+    
     public void deletePlayers(Player player) {
         PlayerDB.players.remove(player);
         FileUtils.setDataToFileP("players.json" , PlayerDB.players);

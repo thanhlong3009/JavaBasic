@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.TransactionHistory;
 
 import java.io.Reader;
 import java.io.Writer;
@@ -20,7 +21,8 @@ public class FileUtils {
             Reader reader = Files.newBufferedReader(Paths.get(fileName));
 
 
-            Type type = new TypeToken<ArrayList<Player>>(){}.getType();
+            Type type = new TypeToken<ArrayList<Player>>() {
+            }.getType();
             ArrayList<Player> players = gson.fromJson(reader, type);
 
             reader.close();
@@ -47,7 +49,8 @@ public class FileUtils {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Paths.get(fileName));
 
-            Type type = new TypeToken<ArrayList<Admin>>(){}.getType();
+            Type type = new TypeToken<ArrayList<Admin>>() {
+            }.getType();
             ArrayList<Admin> admins = gson.fromJson(reader, type);
 
             reader.close();
@@ -57,4 +60,34 @@ public class FileUtils {
         }
         return new ArrayList<>();
     }
+
+    //    --------------------------------------------------------
+    public static ArrayList<TransactionHistory> getDataFromFileHistory(String fileName) {
+        try {
+            Gson gson = new Gson();
+            Reader reader = Files.newBufferedReader(Paths.get(fileName));
+
+            Type type = new TypeToken<ArrayList<TransactionHistory>>() {
+            }.getType();
+            ArrayList<TransactionHistory> transactionHistories = gson.fromJson(reader, type);
+
+            reader.close();
+            return transactionHistories;
+        } catch (Exception e) {
+            // e.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+
+    public static void setDataToFileHistory(String fileName, Object obj) {
+        try {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Writer writer = Files.newBufferedWriter(Paths.get(fileName));
+            gson.toJson(obj, writer);
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

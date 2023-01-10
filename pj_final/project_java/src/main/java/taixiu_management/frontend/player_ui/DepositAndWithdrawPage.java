@@ -1,15 +1,23 @@
 package taixiu_management.frontend.player_ui;
 
+import taixiu_management.backend.controller.HistoryController;
 import taixiu_management.backend.controller.PlayerController;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.TransactionHistory;
 import taixiu_management.backend.request.DepositRequest;
+import taixiu_management.backend.request.HistoryRequest;
 import taixiu_management.backend.request.WithdrawRequest;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class DepositAndWithdrawPage {
     private final PlayerController playerController = new PlayerController();
+
+    private final HistoryController historyController = new HistoryController();
 
     public void run(String email) {
         Player player = playerController.findPlayerByEmail(email);
@@ -22,6 +30,7 @@ public class DepositAndWithdrawPage {
             System.out.println("--------- CỔNG NẠP RÚT TIỀN ----------");
             System.out.println("1 - Nạp tiền ");
             System.out.println("2 - rút tiền");
+            System.out.println("3 - Lịch sử thanh toán");
             System.out.println("0 - Quay lại");
 
             try {
@@ -67,6 +76,13 @@ public class DepositAndWithdrawPage {
                             switch (subOption) {
                                 case 1: {
                                     playerController.depositPlayer(depositRequest);
+                                    LocalDateTime timeSub = LocalDateTime.now();
+                                    String time = timeSub.toString();
+                                    int transactionCode = (int)(Math.random() * 90000 + 1000);
+                                    String status = "DONE";
+                                    String content = "Nạp tiền";
+                                    HistoryRequest historyRequest = new HistoryRequest(email,time,transactionCode,amountDeposit,content,status);
+                                    historyController.updateHistory(historyRequest);
                                     System.out.println("\nTài khoản quý khách sẽ được cộng điểm trong 3-5 phút!!!");
                                     subIsQuit = true;
                                     break;
@@ -127,6 +143,13 @@ public class DepositAndWithdrawPage {
                                         switch (subOption) {
                                             case 1: {
                                                 playerController.withdrawPlayer(withdrawRequest);
+                                                LocalDateTime timeSub = LocalDateTime.now();
+                                                String time = timeSub.toString();
+                                                int transactionCode = (int)(Math.random() * 90000 + 1000);
+                                                String status = "DONE";
+                                                String content = "Rút tiền";
+                                                HistoryRequest historyRequest = new HistoryRequest(email,time,transactionCode,amountWithdraw,content,status);
+                                                historyController.updateHistory(historyRequest);
                                                 System.out.println("\n Rút tiền thành công!!!");
                                                 subIsQuit = true;
                                                 break;
@@ -156,6 +179,17 @@ public class DepositAndWithdrawPage {
                     } else {
                         System.out.println("Nhập số tiền không hợp lệ, quay lại");
                     }
+                    break;
+                }
+                case 3: {
+                    List<TransactionHistory> histories = historyController.getHistories(email);
+                    System.out.println("\n--------- LỊCH SỬ GIAO DỊCH ------------");
+                    System.out.printf("%-30s%-18s%-10s%-15s%-10s\n","THỜI GIAN","MÃ GIAO DỊCH","TIỀN","HÌNH THỨC","TRẠNG THÁI");
+                    for (TransactionHistory t:histories) {
+                        System.out.printf("%-30s%-18d%-10d%-15s%-10s\n",t.getTime(),t.getTransactionCode(),t.getAmount(),t.getContent(),t.getStatus());
+                    }
+                    System.out.println("\nẤn phím bất kỳ + Enter để quay lại!!!!");
+                    String out = sc.nextLine();
                     break;
                 }
                 case 0: {

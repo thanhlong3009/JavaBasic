@@ -7,9 +7,9 @@ import java.util.List;
 
 public class AdminRepository {
 
+    // Lấy danh sách các admin
     public List<Admin> findAll() {
         return AdminDB.admins;
     }
-
 
 }

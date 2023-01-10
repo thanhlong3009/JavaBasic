@@ -24,7 +24,7 @@ public class PlayerPage {
         while (!isQuit) {
             Player player = playerController.findPlayerByEmail(email);
             System.out.println("\n-------- PLAYER PAGE -----------");
-            System.out.printf("Chào mừng %s, bạn có thể thực hiện các công việc sau:\n", player.getUserName());
+            System.out.printf("Chào mừng [ %s ], bạn có thể thực hiện các công việc sau:\n", player.getUserName());
             showMenuPlayer();
 
             try {
@@ -37,7 +37,7 @@ public class PlayerPage {
 
             switch (option) {
                 case 1: {
-                    System.out.println("\n------ ĐÂY LÀ HUỚNG DẪN SỬ DỤNG ------");
+                    System.out.println("\n------ HƯỚNG DẪN LUẬT CHƠI ------");
                     System.out.println("1. Khi bắt đầu chơi nhà cái sẽ tung 3 con xúc xắc và tính điểm");
                     System.out.println("2. Kết quả trả về Xỉu (nếu tổng điểm 3 xúc xắc nhỏ hơn bằng 10), trả về Tài(nếu kết quả lớn hơn 10).");
                     System.out.println("3. Bạn sẽ chọn số tiền đặt cuợc và dự đoán kết quả Tài hay Xỉu.");
@@ -68,7 +68,7 @@ public class PlayerPage {
                     if (players.isEmpty()) {
                         System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
                     } else {
-                        System.out.println("\n----- BẢNG XẾP HẠNG CÁC CON BẠC -----");
+                        System.out.println("\n--------- BẢNG XẾP HẠNG CÁC CON BẠC ---------");
                         System.out.printf("%-20s%-30s%-20s\n", "USER_NAME", "EMAIL", "ACCOUNT BALANCE");
                         for (Player p : players) {
                             System.out.printf("%-20s%-30s%-20s\n", p.getUserName(), p.getEmail(), p.getAccountBalance());

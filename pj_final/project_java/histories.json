@@ -1,0 +1,74 @@
+[
+  {
+    "email": "long",
+    "time": "2023-01-10T23:30:43.701369",
+    "transactionCode": 12345,
+    "amount": 1000,
+    "content": "Rút tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-10T23:37:43.701369",
+    "transactionCode": 12356,
+    "amount": 1000,
+    "content": "Rút tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-10T23:56:56.492751",
+    "transactionCode": 88904,
+    "amount": 1000,
+    "content": "Nạp tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-10T23:58:22.355930",
+    "transactionCode": 17376,
+    "amount": 100,
+    "content": "Rút tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-10T23:58:42.470172",
+    "transactionCode": 56599,
+    "amount": 500,
+    "content": "Rút tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-11T00:44:47.779672",
+    "transactionCode": 36953,
+    "amount": 3000,
+    "content": "Nạp tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "taixiutop1@gmail.com",
+    "time": "2023-01-11T01:10:48.107770",
+    "transactionCode": 16338,
+    "amount": 1000,
+    "content": "Nạp tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "taixiutop1@gmail.com",
+    "time": "2023-01-11T01:11:20.479855",
+    "transactionCode": 84069,
+    "amount": 12,
+    "content": "Rút tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "taixiutop1@gmail.com",
+    "time": "2023-01-11T01:11:25.485990",
+    "transactionCode": 48914,
+    "amount": 10000,
+    "content": "Nạp tiền",
+    "status": "DONE"
+  }
+]

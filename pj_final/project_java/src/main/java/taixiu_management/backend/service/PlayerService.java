@@ -1,5 +1,7 @@
 package taixiu_management.backend.service;
 
+import taixiu_management.backend.database.PlayerDB;
+import taixiu_management.backend.exception.NotFoundException;
 import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
 import taixiu_management.backend.repository.AdminRepository;
@@ -33,30 +35,16 @@ public class PlayerService {
         }
         return player;
     }
+    public Player findPlayerByUserName(String userName) {
+        for (Player p : playerRepository.findAll()) {
+            if (p.getUserName().equals(userName)) {
+                return p;
+            }
+        }
+        throw new NotFoundException("Không tìm thấy người chơi");
+    }
 
-    // tạo một tài khoản người chơi ( đăng ký)
-//    public void createPlayer(RegisterRequest registerRequest) {
-//        if (!checkEmailExist(registerRequest.getEmail()) && checkEmailValidate(registerRequest.getEmail())) {
-//            if (checkPassword(registerRequest.getPassword()) && checkPasswordWithdraw(registerRequest.getPasswordWithdaw()) && checkUserName(registerRequest.getUserName())) {
-//                Player player = new Player();
-//                player.setEmail(registerRequest.getEmail());
-//                player.setPassword(registerRequest.getPassword());
-//                player.setUserName(registerRequest.getUserName());
-//                player.setAccountBalance(registerRequest.getAccountBalance());
-//                player.setPasswordWithdaw(registerRequest.getPasswordWithdaw());
-//
-//                players.add(player);
-//
-//                playerRepository.updateFiles();
-//                System.out.println("Tạo tài khoản thành công");
-//            } else {
-//                System.out.println("Mật khẩu hoặc mật khẩu thanh toán không hợp lệ");
-//            }
-//        } else {
-//            System.out.println("Email không hợp lệ");
-//        }
-//    }
-
+    // Tạo tài khản mới
     public void createPlayer(RegisterRequest registerRequest) {
 
         Player player = new Player();

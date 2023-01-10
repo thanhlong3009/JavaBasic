@@ -1,6 +1,6 @@
 [
   {
-    "accountBalance": 4991,
+    "accountBalance": 4995,
     "passwordWithdaw": "1",
     "userName": "Phá đảo tài xỉu",
     "email": "long",
@@ -53,6 +53,13 @@
     "passwordWithdaw": "7765",
     "userName": "Top1TaiXiu",
     "email": "taixiutop1@gmail.com",
+    "password": "12345678"
+  },
+  {
+    "accountBalance": 0,
+    "passwordWithdaw": "1111",
+    "userName": "longdanhtaixiu",
+    "email": "longlatoday@gmail.com",
     "password": "12345678"
   }
 ]

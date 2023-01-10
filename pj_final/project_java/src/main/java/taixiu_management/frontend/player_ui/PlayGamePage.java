@@ -39,20 +39,24 @@ public class PlayGamePage {
                     System.out.println("\n-------- BẮT ĐẦU CHƠI --------");
                     int amountBet = 0;
                     // Đặt cuợc
-                    do {
+                    while (true) {
                         try {
                             System.out.println("Nhập số tiền bạn muốn đặt cược ( 3 - " + player.getAccountBalance() + " )");
                             amountBet = Integer.parseInt(sc.nextLine());
                         } catch (NumberFormatException e) {
-                            System.out.println("Lựa chọn không hợp lệ");
+                            System.out.println("Lựa chọn không hợp lệ, nhập lại");
                             continue;
                         }
-                    } while (amountBet <= 2 || amountBet > player.getAccountBalance());
-
-
+                        if (amountBet > 2 && amountBet <= player.getAccountBalance()) {
+                            break;
+                        }
+                        else {
+                            System.out.println("Nhập tiền cuợc không hợp lệ, nhập lại");
+                        }
+                    }
                     // Chọn tài xỉu
                     int chooseBet = 0;
-                    do {
+                    while (true) {
                         try {
                             System.out.println("--- CHỌN CỬA ĐI NÀO ---");
                             System.out.println("--- 1. Tài---");
@@ -60,11 +64,15 @@ public class PlayGamePage {
                             System.out.println("Mời bạn ra tay");
                             chooseBet = Integer.parseInt(sc.nextLine());
                         } catch (NumberFormatException e) {
-                            System.out.println("Lựa chọn không hợp lệ");
+                            System.out.println("Lựa chọn không hợp lệ, nhập lại");
                             continue;
                         }
-                    } while (chooseBet != 1 && chooseBet != 2);
-
+                        if (chooseBet == 1 || chooseBet == 2) {
+                            break;
+                        }else {
+                            System.out.println("Chọn cửa chưa chính xác, vui lòng chọn lại");
+                        }
+                    }
                     Random dice = new Random();
                     int dice1 = dice.nextInt(5) + 1;
                     int dice2 = dice.nextInt(5) + 1;

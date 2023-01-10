@@ -64,19 +64,58 @@ public class SignInPage {
                     break;
                 }
                 case 2 -> {
-                    System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
-                    System.out.println("Nhập tên tài khoản");
-                    String userName = sc.nextLine();
-                    System.out.println("Nhập email:");
-                    String email = sc.nextLine();
-                    System.out.println("Nhập mật khẩu:");
-                    String password = sc.nextLine();
-                    System.out.println("Nhập mật khẩu rút tiền");
-                    String passwordWithdaw = sc.nextLine();
-                    int accountBalance = 0;
-                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
+//                    System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
+//                    System.out.println("Nhập tên tài khoản");
+//                    String userName = sc.nextLine();
+//                    System.out.println("Nhập email:");
+//                    String email = sc.nextLine();
+//                    System.out.println("Nhập mật khẩu:");
+//                    String password = sc.nextLine();
+//                    System.out.println("Nhập mật khẩu rút tiền");
+//                    String passwordWithdaw = sc.nextLine();
+//                    int accountBalance = 0;
+//                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
+//
+//                    playerController.createPlayer(registerRequest);
 
-                    playerController.createPlayer(registerRequest);
+
+
+                    while (true) {
+                        System.out.println("Nhập email:");
+                        String email = sc.nextLine();
+                        if (!playerController.checkEmailExist(email) && playerController.checkEmailValidate(email)){
+                            while (true) {
+                                System.out.println("Nhập tên tài khoản");
+                                String userName = sc.nextLine();
+                                if (playerController.checkUserName(userName)){
+                                    while (true){
+                                        System.out.println("Nhập mật khẩu:");
+                                        String password = sc.nextLine();
+                                        System.out.println("Nhập mật khẩu rút tiền");
+                                        String passwordWithdaw = sc.nextLine();
+                                        int accountBalance = 0;
+                                        if (playerController.checkPassword(password) && playerController.checkPasswordWithdraw(passwordWithdaw)){
+                                            RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
+
+                                            playerController.createPlayer(registerRequest);
+                                            break;
+                                        }else {
+                                            System.out.println("Mật khẩu hoặc mật khẩu rút tiền không chính xác, nhập lại");
+                                        }
+                                    }
+                                    break;
+                                }else {
+                                    System.out.println("Username không hợp lệ, nhập lại");
+                                }
+                            }
+                            break;
+                        }else {
+                            System.out.println("Email không hợp lệ hoặc đã tồn tại, nhập lại");
+                        }
+                    }
+
+
+
 
 
                     break;

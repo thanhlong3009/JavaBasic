@@ -67,4 +67,20 @@ public class PlayerController {
     public List<Admin> getAdmins() {
         return playerService.getAdmins();
     }
+
+    public boolean checkEmailValidate(String email) {
+        return playerService.checkEmailValidate(email);
+    }
+
+    public boolean checkUserName(String userName) {
+        return playerService.checkUserName(userName);
+    }
+
+    public boolean checkPassword(String password) {
+        return playerService.checkPassword(password);
+    }
+
+    public boolean checkPasswordWithdraw(String passwordWithdaw) {
+        return playerService.checkPasswordWithdraw(passwordWithdaw);
+    }
 }

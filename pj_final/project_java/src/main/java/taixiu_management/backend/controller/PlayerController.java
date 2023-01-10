@@ -1,5 +1,6 @@
 package taixiu_management.backend.controller;
 
+import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
 import taixiu_management.backend.request.*;
 import taixiu_management.backend.service.PlayerService;
@@ -57,7 +58,13 @@ public class PlayerController {
         return playerService.checkAccountBalance(email);
     }
 
+    // check bảng xếp hạng
     public List<Player> getRankings() {
         return playerService.getRankings();
+    }
+
+    // lấy ra danh sách admin hỗ trợ
+    public List<Admin> getAdmins() {
+        return playerService.getAdmins();
     }
 }

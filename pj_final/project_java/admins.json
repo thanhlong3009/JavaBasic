@@ -3,5 +3,10 @@
     "userName": "Thành Long boss",
     "email": "admin",
     "password": "1"
+  },
+  {
+    "userName": "Admin 2",
+    "email": "admin2",
+    "password": "1"
   }
 ]

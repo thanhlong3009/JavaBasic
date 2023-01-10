@@ -1,6 +1,8 @@
 package taixiu_management.backend.service;
 
+import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.repository.AdminRepository;
 import taixiu_management.backend.repository.PlayerRepository;
 import taixiu_management.backend.request.*;
 
@@ -11,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class PlayerService {
     private final PlayerRepository playerRepository = new PlayerRepository();
+    private final AdminRepository adminRepository = new AdminRepository();
 
     List<Player> players = playerRepository.findAll();
 
@@ -146,6 +149,7 @@ public class PlayerService {
         return false;
     }
 
+    // check bảng xếp hạng
     public List<Player> getRankings() {
         Collections.sort(players,new Comparator<Player>() {
             @Override
@@ -156,6 +160,10 @@ public class PlayerService {
         });
 
         return players;
+    }
+    // lấy ra danh sách admin
+    public List<Admin> getAdmins() {
+        return adminRepository.findAll();
     }
 }
 

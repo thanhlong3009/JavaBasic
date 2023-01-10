@@ -1,6 +1,7 @@
 package taixiu_management.frontend.player_ui;
 
 import taixiu_management.backend.controller.PlayerController;
+import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
 import taixiu_management.backend.request.ChangePasswordRequest;
 
@@ -47,7 +48,7 @@ public class PlayerPage {
                     System.out.println("--------- HẾT -----------\n");
 
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
-                    String subOption =sc.nextLine();
+                    String out =sc.nextLine();
                     break;
                 }
                 case 2: {
@@ -80,6 +81,7 @@ public class PlayerPage {
                     }
                     System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
                     String out = sc.nextLine();
+                    break;
 
                 }
                 case 5: {
@@ -115,6 +117,54 @@ public class PlayerPage {
                     break;
                 }
                 case 7: {
+
+                    int supportOption = 0;
+                    boolean subIsQuit = false;
+                    while (!subIsQuit){
+                        showMenuSupport();
+                        try {
+                            System.out.print("Nhập lựa chọn : ");
+                            supportOption = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Lựa chọn không hợp lệ");
+                            continue;
+                        }
+
+                        switch (supportOption){
+                            case 1: {
+                                System.out.println("Bạn đang có số thứ tự 23 trong hàng chờ, thời gian ước tính 15 phút .........");
+                                System.out.println("\nẤn phím bất kỳ để trở lại ...");
+                                String out = sc.nextLine();
+                                break;
+                            }
+                            case 2: {
+                                List<Admin> admins = playerController.getAdmins();
+                                if (admins.isEmpty()){
+                                    System.out.println("Không có admin nào");
+                                }else {
+                                    System.out.println("\n----- DANH SÁCH ADMIN -----");
+                                    System.out.printf("%-20s%-30s\n","USER_NAME","EMAIL");
+                                    for (Admin a:admins) {
+                                        System.out.printf("%-20s%-30s\n",a.getUserName(),a.getEmail());
+                                    }
+                                }
+                                System.out.println("Hãy liên hệ trực tiếp với 1 trong các admin qua email để nhận được sự hỗ trợ sớm nhất!!!");
+                                System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                                String out = sc.nextLine();
+                                break;
+                            }
+                            case 0: {
+                                subIsQuit = true;
+                                break;
+                            }
+                            default: {
+                                System.out.println("Lựa chọn không hợp lệ, nhập lại");
+                            }
+                        }
+                    }
+                    break;
+                }
+                case 8: {
                     isQuit = true;
                     break;
                 }
@@ -126,6 +176,13 @@ public class PlayerPage {
         }
     }
 
+    private void showMenuSupport() {
+        System.out.println("\n ---- HỖ TRỢ KHÁCH HÀNG -----");
+        System.out.println("1. Live Chat");
+        System.out.println("2. Liên hệ trực tiếp với các admin");
+        System.out.println("0. Quay lại");
+    }
+
     public static void showMenuPlayer() {
         System.out.println("1 - Hướng dẫn ");
         System.out.println("2 - Bắt đầu đốt tiền");
@@ -133,6 +190,7 @@ public class PlayerPage {
         System.out.println("4 - Bảng xếp hạng");
         System.out.println("5 - Thông tin cá nhân");
         System.out.println("6 - Thay đổi mật khẩu");
-        System.out.println("7 - Thoát");
+        System.out.println("7 - Hỗ trợ");
+        System.out.println("8 - Thoát");
     }
 }

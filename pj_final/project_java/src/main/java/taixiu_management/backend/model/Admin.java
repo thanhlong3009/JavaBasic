@@ -7,4 +7,5 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class Admin extends User{
+
 }

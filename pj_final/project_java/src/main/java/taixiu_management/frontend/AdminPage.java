@@ -3,6 +3,7 @@ package taixiu_management.frontend;
 import taixiu_management.backend.controller.AdminController;
 import taixiu_management.backend.controller.PlayerController;
 import taixiu_management.backend.exception.NotFoundException;
+import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
 
 import java.util.List;
@@ -32,9 +33,20 @@ public class AdminPage {
             }
 
             switch (option) {
-                case 1: {
-                    List<Player> players = adminController.getPlayers();
 
+                case 1: {
+                    System.out.println("\n ------- THÔNG TIN CÁ NHÂN ----------");
+                    Admin admin = adminController.findAdminByEmail(email);
+                    System.out.println("Username: " + admin.getUserName());
+                    System.out.println("Email: " + admin.getEmail());
+                    System.out.println("Password: " + admin.getPassword());
+                    System.out.println("------ HẾT -------");
+                    System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                    String out = sc.nextLine();
+                    break;
+                }
+                case 2: {
+                    List<Player> players = adminController.getPlayers();
                     if (players.isEmpty()){
                         System.out.println("Không có người chơi nào tham gia trò chơi");
                     }else {
@@ -49,7 +61,43 @@ public class AdminPage {
                     break;
 
                 }
-                case 2: {
+
+                case 3: {
+                    List<Player> players = adminController.getRankings();
+                    if (players.isEmpty()){
+                        System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
+                    }else {
+                        System.out.println("\n----- BẢNG XẾP HẠNG CÁC CON BẠC -----");
+                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        for (Player p:players) {
+                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                        }
+                    }
+                    System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                    String out = sc.nextLine();
+                    break;
+                }
+
+                case 4: {
+                    System.out.println("Nhập email người chơi cần tìm ");
+                    String emailFind = sc.nextLine();
+                    List<Player> players = adminController.findPlayersByEmail(emailFind);
+                    if (players.isEmpty()){
+                        System.out.println("KHÔNG CÓ CON BẠC NÀO");
+                    }else {
+                        System.out.println("\n----- DANH SÁCH CÁC CON BẠC CẦN TÌM -----");
+                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        for (Player p:players) {
+                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                        }
+                    }
+                    System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                    String out = sc.nextLine();
+
+                    break;
+                }
+
+                case 5: {
                     System.out.println("\n---- XÓA NGƯỜI CHƠI THEO USERNAME ----");
                     System.out.println("Nhập username muốn xóa: ");
                     String userName = sc.nextLine();
@@ -61,7 +109,8 @@ public class AdminPage {
                     }
                     break;
                 }
-                case 3: {
+
+                case  6: {
                     System.out.println(" Đăng xuất khỏi tài khoản admin");
                     isQuit = true;
                     break;
@@ -76,8 +125,11 @@ public class AdminPage {
     }
 
     public static void showMenu() {
-        System.out.println("1 - Xem danh sách người chơi ");
-        System.out.println("2 - Xóa người chơi ");
-        System.out.println("3 - Đăng xuất");
+        System.out.println("1 - Thông tin cá nhân ");
+        System.out.println("2 - Xem danh sách người chơi ");
+        System.out.println("3 - Bảng xếp hạng người chơi");
+        System.out.println("4 - Tìm kiếm tài khoản người chơi");
+        System.out.println("5 - Xóa người chơi ");
+        System.out.println("6 - Đăng xuất");
     }
 }

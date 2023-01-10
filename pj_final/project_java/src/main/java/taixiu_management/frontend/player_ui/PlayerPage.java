@@ -4,6 +4,7 @@ import taixiu_management.backend.controller.PlayerController;
 import taixiu_management.backend.model.Player;
 import taixiu_management.backend.request.ChangePasswordRequest;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class PlayerPage {
@@ -53,7 +54,7 @@ public class PlayerPage {
                     if (playerController.checkAccountBalance(email)){
                         playGamePage.run(email);
                     }else {
-                        System.out.println("Số dư tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng na thêm tiền!!");
+                        System.out.println("Số dư tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng nạp thêm tiền!!");
                     }
                     break;
                 }
@@ -62,35 +63,58 @@ public class PlayerPage {
                     break;
                 }
                 case 4: {
-                    System.out.println("------ THÔNG TIN CÁ NHÂN ------");
+                    List<Player> players = playerController.getRankings();
+                    if (players.isEmpty()){
+                        System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
+                    }else {
+                        System.out.println("\n----- BẢNG XẾP HẠNG CÁC CON BẠC -----");
+                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        for (Player p:players) {
+                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                        }
+                    }
+                    for (int i = 0; i < players.size(); i++) {
+                        if (players.get(i).getEmail().equals(email)) {
+                            System.out.println("\nXếp hạng của bạn: " + (i+1));
+                        }
+                    }
+                    System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+                    String out = sc.nextLine();
+
+                }
+                case 5: {
+                    System.out.println("---------- THÔNG TIN CÁ NHÂN ---------");
                     System.out.println("Tên người chơi: " + player.getUserName());
                     System.out.println("Email đăng ký: " + player.getEmail());
                     System.out.println("Mật khẩu đăng nhập: " + player.getPassword());
                     System.out.println("Mật khẩu rút tiền: " + player.getPasswordWithdaw());
                     System.out.println("Số dư tài khoản: " + player.getAccountBalance());
+                    System.out.println("---------------------------------------");
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
                     String subOption =sc.nextLine();
                     break;
                 }
-                case 5: {
+                case 6: {
                     System.out.println("\n ------ THAY ĐỔI MẬT KHẨU ------");
                     System.out.println("Nhập mật khẩu hiện tại");
                     String password = sc.nextLine();
-                    System.out.println("Nhập mật khẩu mới");
-                    String newPassword = sc.nextLine();
-                    System.out.println("Nhập lại mật khẩu mới");
-                    String subNewPassword = sc.nextLine();
-
-                    if (newPassword.equals(subNewPassword) && player.getPassword().equals(password)){
-                        ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(email,newPassword);
-                        playerController.changePassword(changePasswordRequest);
+                    if (player.getPassword().equals(password)) {
+                        System.out.println("Nhập mật khẩu mới");
+                        String newPassword = sc.nextLine();
+                        System.out.println("Nhập lại mật khẩu mới");
+                        String subNewPassword = sc.nextLine();
+                        if (newPassword.equals(subNewPassword)) {
+                            ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(email,newPassword);
+                            playerController.changePassword(changePasswordRequest);
+                        }else {
+                            System.out.println("Nhập mật khẩu mới không chính xác");
+                        }
                     }else {
-                        System.out.println("Nhập xác nhận mật khẩu không chính xác");
+                        System.out.println("Nhập mật khẩu cũ không chính xác");
                     }
-
                     break;
                 }
-                case 6: {
+                case 7: {
                     isQuit = true;
                     break;
                 }
@@ -106,8 +130,9 @@ public class PlayerPage {
         System.out.println("1 - Hướng dẫn ");
         System.out.println("2 - Bắt đầu đốt tiền");
         System.out.println("3 - Nạp/Rút tiền");
-        System.out.println("4 - Thông tin cá nhân");
-        System.out.println("5 - Thay đổi mật khẩu");
-        System.out.println("6 - Thoát");
+        System.out.println("4 - Bảng xếp hạng");
+        System.out.println("5 - Thông tin cá nhân");
+        System.out.println("6 - Thay đổi mật khẩu");
+        System.out.println("7 - Thoát");
     }
 }

@@ -4,6 +4,8 @@ import taixiu_management.backend.model.Player;
 import taixiu_management.backend.repository.PlayerRepository;
 import taixiu_management.backend.request.*;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -123,7 +125,7 @@ public class PlayerService {
 
     // TODO : chưa tìm được cách để mật khẩu rút tiền chỉ chứa 4 ký tự số, test riêng đúng nhưng trong bài lại sai
     public boolean checkPasswordWithdraw(String passwordWithdaw) {
-        String PASSWORD_WITHDRAW_PATTERN = "[0,9]{4}$";
+        String PASSWORD_WITHDRAW_PATTERN = "[0-9]{4}$";
         return Pattern.matches(PASSWORD_WITHDRAW_PATTERN, passwordWithdaw);
     }
 
@@ -138,10 +140,22 @@ public class PlayerService {
     // Kiểm tra số dư tài khoản có lớn hơn 3 không, để tham gia cá cuợc
     public boolean checkAccountBalance(String email) {
         Player player = findPlayerByEmail(email);
-        if (player.getAccountBalance() > 3) {
+        if (player.getAccountBalance() >= 3) {
             return true;
         }
         return false;
+    }
+
+    public List<Player> getRankings() {
+        Collections.sort(players,new Comparator<Player>() {
+            @Override
+            public int compare(Player o1, Player o2) {
+                //Sử dụng toán tử 3 ngôi
+                return o2.getAccountBalance() - o1.getAccountBalance() > 0 ? 1 : -1;
+            }
+        });
+
+        return players;
     }
 }
 

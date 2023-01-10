@@ -4,6 +4,8 @@ import taixiu_management.backend.model.Player;
 import taixiu_management.backend.request.*;
 import taixiu_management.backend.service.PlayerService;
 
+import java.util.List;
+
 public class PlayerController {
     private static final PlayerService playerService = new PlayerService();
 
@@ -53,5 +55,9 @@ public class PlayerController {
     // Check số dư tài khoản để chơi game
     public boolean checkAccountBalance(String email) {
         return playerService.checkAccountBalance(email);
+    }
+
+    public List<Player> getRankings() {
+        return playerService.getRankings();
     }
 }

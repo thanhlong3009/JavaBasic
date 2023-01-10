@@ -14,18 +14,22 @@ public class PlayerController {
     public boolean checkLogin(LoginRequest loginRequest) {
         return playerService.checkLogin(loginRequest);
     }
+
     // Tìm người chơi theo email
     public Player findPlayerByEmail(String email) {
        return playerService.findPlayerByEmail(email);
     }
+
     // Tạo người chơi mới
     public void createPlayer(RegisterRequest registerRequest) {
         playerService.createPlayer(registerRequest);
     }
+
     // Cộng tiền vào tài khoản, từ việc nạp
     public void depositPlayer(DepositRequest depositRequest) {
         playerService.depositPlayer(depositRequest.getEmail(),depositRequest.getAmountDeposit());
     }
+
     // Kiểm tra số tiền có
     public boolean checkAmount(int amountDeposit) {
         return playerService.checkAmount(amountDeposit);
@@ -35,14 +39,17 @@ public class PlayerController {
     public void withdrawPlayer(WithdrawRequest withdrawRequest) {
          playerService.withdrawPlayer(withdrawRequest.getEmail(),withdrawRequest.getAmountWithdraw());
     }
+
     // trừ tiền từ tài khoản của bạn, cuợc thua
     public void loseBet(String email, int amountBet) {
         playerService.withdrawPlayer(email,amountBet);
     }
+
     // Cộng tiền vào tài khoản, cuợc thắng
     public void winBet(String email, int amountBetWin) {
         playerService.depositPlayer(email,amountBetWin);
     }
+
     // Check password có hợp lệ không
     public void changePassword(ChangePasswordRequest changePasswordRequest) {
         playerService.changePassword(changePasswordRequest);
@@ -68,18 +75,22 @@ public class PlayerController {
         return playerService.getAdmins();
     }
 
+    // check email hợp lệ
     public boolean checkEmailValidate(String email) {
         return playerService.checkEmailValidate(email);
     }
 
+    //check username hợp lệ
     public boolean checkUserName(String userName) {
         return playerService.checkUserName(userName);
     }
 
+    // checkpw hợp lệ
     public boolean checkPassword(String password) {
         return playerService.checkPassword(password);
     }
 
+    // check mật khẩu thanh toán hợp lệ
     public boolean checkPasswordWithdraw(String passwordWithdaw) {
         return playerService.checkPasswordWithdraw(passwordWithdaw);
     }

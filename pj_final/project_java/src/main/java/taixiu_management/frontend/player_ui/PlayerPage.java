@@ -48,13 +48,13 @@ public class PlayerPage {
                     System.out.println("--------- HẾT -----------\n");
 
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
-                    String out =sc.nextLine();
+                    String out = sc.nextLine();
                     break;
                 }
                 case 2: {
-                    if (playerController.checkAccountBalance(email)){
+                    if (playerController.checkAccountBalance(email)) {
                         playGamePage.run(email);
-                    }else {
+                    } else {
                         System.out.println("Số dư tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng nạp thêm tiền!!");
                     }
                     break;
@@ -65,18 +65,18 @@ public class PlayerPage {
                 }
                 case 4: {
                     List<Player> players = playerController.getRankings();
-                    if (players.isEmpty()){
+                    if (players.isEmpty()) {
                         System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
-                    }else {
+                    } else {
                         System.out.println("\n----- BẢNG XẾP HẠNG CÁC CON BẠC -----");
-                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
-                        for (Player p:players) {
-                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                        System.out.printf("%-20s%-30s%-20s\n", "USER_NAME", "EMAIL", "ACCOUNT BALANCE");
+                        for (Player p : players) {
+                            System.out.printf("%-20s%-30s%-20s\n", p.getUserName(), p.getEmail(), p.getAccountBalance());
                         }
                     }
                     for (int i = 0; i < players.size(); i++) {
                         if (players.get(i).getEmail().equals(email)) {
-                            System.out.println("\nXếp hạng của bạn: " + (i+1));
+                            System.out.println("\nXếp hạng của bạn: " + (i + 1));
                         }
                     }
                     System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
@@ -93,7 +93,7 @@ public class PlayerPage {
                     System.out.println("Số dư tài khoản: " + player.getAccountBalance());
                     System.out.println("---------------------------------------");
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
-                    String subOption =sc.nextLine();
+                    String subOption = sc.nextLine();
                     break;
                 }
                 case 6: {
@@ -106,12 +106,12 @@ public class PlayerPage {
                         System.out.println("Nhập lại mật khẩu mới");
                         String subNewPassword = sc.nextLine();
                         if (newPassword.equals(subNewPassword)) {
-                            ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(email,newPassword);
+                            ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(email, newPassword);
                             playerController.changePassword(changePasswordRequest);
-                        }else {
+                        } else {
                             System.out.println("Nhập mật khẩu mới không chính xác");
                         }
-                    }else {
+                    } else {
                         System.out.println("Nhập mật khẩu cũ không chính xác");
                     }
                     break;
@@ -120,7 +120,7 @@ public class PlayerPage {
 
                     int supportOption = 0;
                     boolean subIsQuit = false;
-                    while (!subIsQuit){
+                    while (!subIsQuit) {
                         showMenuSupport();
                         try {
                             System.out.print("Nhập lựa chọn : ");
@@ -130,7 +130,7 @@ public class PlayerPage {
                             continue;
                         }
 
-                        switch (supportOption){
+                        switch (supportOption) {
                             case 1: {
                                 System.out.println("Bạn đang có số thứ tự 23 trong hàng chờ, thời gian ước tính 15 phút .........");
                                 System.out.println("\nẤn phím bất kỳ để trở lại ...");
@@ -139,13 +139,13 @@ public class PlayerPage {
                             }
                             case 2: {
                                 List<Admin> admins = playerController.getAdmins();
-                                if (admins.isEmpty()){
+                                if (admins.isEmpty()) {
                                     System.out.println("Không có admin nào");
-                                }else {
+                                } else {
                                     System.out.println("\n----- DANH SÁCH ADMIN -----");
-                                    System.out.printf("%-20s%-30s\n","USER_NAME","EMAIL");
-                                    for (Admin a:admins) {
-                                        System.out.printf("%-20s%-30s\n",a.getUserName(),a.getEmail());
+                                    System.out.printf("%-20s%-30s\n", "USER_NAME", "EMAIL");
+                                    for (Admin a : admins) {
+                                        System.out.printf("%-20s%-30s\n", a.getUserName(), a.getEmail());
                                     }
                                 }
                                 System.out.println("Hãy liên hệ trực tiếp với 1 trong các admin qua email để nhận được sự hỗ trợ sớm nhất!!!");
@@ -165,6 +165,13 @@ public class PlayerPage {
                     break;
                 }
                 case 8: {
+                    System.out.println("Đăng xuất!!!1");
+                    isQuit = true;
+                    break;
+                }
+                case 9: {
+                    System.out.println("Thoát chương trình");
+                    System.exit(1);
                     isQuit = true;
                     break;
                 }
@@ -191,6 +198,7 @@ public class PlayerPage {
         System.out.println("5 - Thông tin cá nhân");
         System.out.println("6 - Thay đổi mật khẩu");
         System.out.println("7 - Hỗ trợ");
-        System.out.println("8 - Thoát");
+        System.out.println("8 - Đăng xuất");
+        System.out.println("9 - Thoát chương trình");
     }
 }

@@ -116,8 +116,16 @@ public class AdminPage {
                     break;
                 }
 
+                case 7: {
+                    System.out.println("---- Thoát chương trình ----");
+                    System.exit(1);
+                    isQuit = true;
+                    break;
+                }
+
                 default: {
                     System.out.println("Lựa chọn không hợp lệ");
+
                     break;
                 }
             }
@@ -131,5 +139,6 @@ public class AdminPage {
         System.out.println("4 - Tìm kiếm tài khoản người chơi");
         System.out.println("5 - Xóa người chơi ");
         System.out.println("6 - Đăng xuất");
+        System.out.println("7 - Thoát chương trình");
     }
 }

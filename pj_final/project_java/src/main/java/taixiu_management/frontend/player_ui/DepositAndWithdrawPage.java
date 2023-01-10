@@ -19,8 +19,10 @@ public class DepositAndWithdrawPage {
 
         while (!isQuit) {
 
-            System.out.print("--------- CỔNG NẠP RÚT TIỀN ----------");
-            showMenuDepositAndWithdraw();
+            System.out.println("--------- CỔNG NẠP RÚT TIỀN ----------");
+            System.out.println("1 - Nạp tiền ");
+            System.out.println("2 - rút tiền");
+            System.out.println("0 - Quay lại");
 
             try {
                 System.out.print("Nhập lựa chọn : ");
@@ -62,7 +64,6 @@ public class DepositAndWithdrawPage {
                                 System.out.println("Lựa chọn không hợp lệ, thử lại");
                                 continue;
                             }
-
                             switch (subOption) {
                                 case 1: {
                                     playerController.depositPlayer(depositRequest);
@@ -80,12 +81,10 @@ public class DepositAndWithdrawPage {
                                 }
                             }
                         }
-
                     } else {
                         System.out.println("Nhập số tiền muốn nạp không chính xác");
                     }
                     break;
-
                 }
                 case 2: {
                     System.out.println("\n---- RÚT TIỀN ----");
@@ -142,19 +141,19 @@ public class DepositAndWithdrawPage {
                                             }
                                         }
                                     }
-                                }else {
+                                } else {
                                     System.out.println("Nhập mã otp thất bại, thoát");
                                 }
                             } catch (NumberFormatException e) {
                                 System.out.println("Lựa chọn không hợp lệ, thử lại");
                                 continue;
                             }
-                        }else {
+                        } else {
                             System.out.println("Mật khẩu rút tiền không chính xác, quay lại!");
                         }
 
 
-                    }else {
+                    } else {
                         System.out.println("Nhập số tiền không hợp lệ, quay lại");
                     }
                     break;
@@ -169,12 +168,5 @@ public class DepositAndWithdrawPage {
                 }
             }
         }
-    }
-
-    public static void showMenuDepositAndWithdraw() {
-        System.out.println("\n********* DEPOSIT/WITHDRAW MENU *********");
-        System.out.println("1 - Nạp tiền ");
-        System.out.println("2 - rút tiền");
-        System.out.println("0 - Quay lại");
     }
 }

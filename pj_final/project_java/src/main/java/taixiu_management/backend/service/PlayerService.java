@@ -106,6 +106,19 @@ public class PlayerService {
         return adminRepository.findAll();
     }
 
+    // xem bảng xếp hạng
+    public List<Player> getRankings() {
+        Collections.sort(players, new Comparator<Player>() {
+            @Override
+            public int compare(Player o1, Player o2) {
+                //Sử dụng toán tử 3 ngôi
+                return o2.getAccountBalance() - o1.getAccountBalance() > 0 ? 1 : -1;
+            }
+        });
+
+        return players;
+    }
+
 
     // --------------------------------- CÁC METHOD CHECK -------------------------------------
 
@@ -177,18 +190,7 @@ public class PlayerService {
         return false;
     }
 
-    // check bảng xếp hạng
-    public List<Player> getRankings() {
-        Collections.sort(players, new Comparator<Player>() {
-            @Override
-            public int compare(Player o1, Player o2) {
-                //Sử dụng toán tử 3 ngôi
-                return o2.getAccountBalance() - o1.getAccountBalance() > 0 ? 1 : -1;
-            }
-        });
 
-        return players;
-    }
 
 }
 

@@ -14,7 +14,6 @@ public class PlayGamePage {
         Scanner sc = new Scanner(System.in);
         Player player = playerController.findPlayerByEmail(email);
 
-
         int option = 0;
         boolean isQuit = false;
 
@@ -41,7 +40,7 @@ public class PlayGamePage {
                     // Đặt cuợc
                     while (true) {
                         try {
-                            System.out.println("Nhập số tiền bạn muốn đặt cược ( 3 - " + player.getAccountBalance() + " )");
+                            System.out.println("Nhập số tiền bạn muốn đặt cược ( 3$ - " + player.getAccountBalance() + "$ )");
                             amountBet = Integer.parseInt(sc.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Lựa chọn không hợp lệ, nhập lại");
@@ -88,7 +87,7 @@ public class PlayGamePage {
                             System.out.println("-- THUA RỒI, GẤP ĐÔI LÊN THÔI --\n");
                             playerController.loseBet(email,amountBet);
                         }else {
-                            System.out.println("Bạn chọn Xỉu => Cược thắng, bạn thắng 100% số tiền cuợc với phí cá cược 2 điểm");
+                            System.out.println("Bạn chọn Xỉu => Cược thắng, bạn thắng 100% số tiền cuợc với phí cá cược 2$.");
                             System.out.println("-- CHÚC MỪNG CON BẠC --\n");
                             int amountBetWin = amountBet - 2;
                             playerController.winBet(email,amountBetWin);

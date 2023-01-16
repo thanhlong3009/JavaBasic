@@ -50,10 +50,10 @@ public class AdminPage {
                     if (players.isEmpty()){
                         System.out.println("Không có người chơi nào tham gia trò chơi");
                     }else {
-                        System.out.println("\n----- DANH SÁCH TÀI KHOẢN ĐĂNG KÝ GAME TÀI XỈU -----");
-                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        System.out.println("\n-------------------------------- DANH SÁCH TÀI KHOẢN ĐĂNG KÝ GAME TÀI XỈU --------------------------------");
+                        System.out.printf("%-20s%-30s%-25s%-20s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE (USD)","TOTAL_BET (USD)","BETTING_PROFIT (USD)");
                         for (Player p:players) {
-                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                            System.out.printf("%-20s%-30s%-25d%-20d%-20d\n",p.getUserName(),p.getEmail(),p.getAccountBalance(),p.getTotalBet(),p.getBettingProfit());
                         }
                     }
                     System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
@@ -63,14 +63,14 @@ public class AdminPage {
                 }
 
                 case 3: {
-                    List<Player> players = adminController.getRankings();
-                    if (players.isEmpty()){
+                    List<Player> playersRanking = adminController.getRankings();
+                    if (playersRanking.isEmpty()){
                         System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
                     }else {
-                        System.out.println("\n----- BẢNG XẾP HẠNG CÁC CON BẠC -----");
-                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
-                        for (Player p:players) {
-                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                        System.out.println("\n--------------------------------- BẢNG XẾP HẠNG CÁC CON BẠC ----------------------------------");
+                        System.out.printf("%-20s%-30s%-25s%-20s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE (USD)","TOTAL_BET (USD)","BETTING_PROFIT (USD)");
+                        for (Player p:playersRanking) {
+                            System.out.printf("%-20s%-30s%-25d%-20d%-20d\n",p.getUserName(),p.getEmail(),p.getAccountBalance(),p.getTotalBet(),p.getBettingProfit());
                         }
                     }
                     System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
@@ -86,9 +86,9 @@ public class AdminPage {
                         System.out.println("KHÔNG CÓ CON BẠC NÀO");
                     }else {
                         System.out.println("\n----- DANH SÁCH CÁC CON BẠC CẦN TÌM -----");
-                        System.out.printf("%-20s%-30s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE");
+                        System.out.printf("%-20s%-30s%-25s%-20s%-20s\n","USER_NAME","EMAIL","ACCOUNT BALANCE (USD)","TOTAL_BET (USD)","BETTING_PROFIT (USD)");
                         for (Player p:players) {
-                            System.out.printf("%-20s%-30s%-20s\n",p.getUserName(),p.getEmail(),p.getAccountBalance());
+                            System.out.printf("%-20s%-30s%-25d%-20d%-20d\n",p.getUserName(),p.getEmail(),p.getAccountBalance(),p.getTotalBet(),p.getBettingProfit());
                         }
                     }
                     System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
@@ -136,8 +136,8 @@ public class AdminPage {
         System.out.println("1 - Thông tin cá nhân ");
         System.out.println("2 - Xem danh sách người chơi ");
         System.out.println("3 - Bảng xếp hạng người chơi");
-        System.out.println("4 - Tìm kiếm tài khoản người chơi");
-        System.out.println("5 - Xóa người chơi ");
+        System.out.println("4 - Tìm kiếm tài khoản người chơi (theo email)");
+        System.out.println("5 - Xóa người chơi (theo username)");
         System.out.println("6 - Đăng xuất");
         System.out.println("7 - Thoát chương trình");
     }

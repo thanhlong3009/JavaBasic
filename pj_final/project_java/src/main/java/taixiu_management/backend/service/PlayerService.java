@@ -64,16 +64,20 @@ public class PlayerService {
     // Cộng tiền người chơi(nạp or win) theo email.
     public void depositPlayer(String email, int amountDeposit) {
         Player player = findPlayerByEmail(email);
-        int rs = player.getAccountBalance() + amountDeposit;
-        player.setAccountBalance(rs);
+
+        player.setTotalBet(player.getTotalBet() + amountDeposit);
+        player.setBettingProfit(player.getBettingProfit() - amountDeposit);
+        player.setAccountBalance(player.getAccountBalance() + amountDeposit);
         playerRepository.updateFiles();
     }
 
     // Trừ tiền người chơi(rút or lose) theo email
     public void withdrawPlayer(String email, int amountWithdraw) {
         Player player = findPlayerByEmail(email);
-        int rs = player.getAccountBalance() - amountWithdraw;
-        player.setAccountBalance(rs);
+
+        player.setTotalBet(player.getTotalBet() + amountWithdraw);
+        player.setBettingProfit(player.getBettingProfit() - amountWithdraw);
+        player.setAccountBalance(player.getAccountBalance() - amountWithdraw);
         playerRepository.updateFiles();
     }
 

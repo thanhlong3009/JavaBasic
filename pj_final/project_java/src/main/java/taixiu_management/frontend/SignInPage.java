@@ -9,6 +9,7 @@ import taixiu_management.backend.request.LoginRequest;
 import taixiu_management.backend.request.RegisterRequest;
 import taixiu_management.frontend.player_ui.PlayerPage;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class SignInPage {
@@ -63,43 +64,56 @@ public class SignInPage {
 
                 }
                 case 2 -> {
+
                     System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
-//                    System.out.println("Nhập tên tài khoản");
-//                    String userName = sc.nextLine();
-//                    System.out.println("Nhập email:");
-//                    String email = sc.nextLine();
-//                    System.out.println("Nhập mật khẩu:");
-//                    String password = sc.nextLine();
-//                    System.out.println("Nhập mật khẩu rút tiền");
-//                    String passwordWithdaw = sc.nextLine();
-//                    int accountBalance = 0;
-//                    RegisterRequest registerRequest = new RegisterRequest(userName,email,password,passwordWithdaw,accountBalance);
-//
-//                    playerController.createPlayer(registerRequest);
-
-
                     while (true) {
-
                         System.out.println("Nhập email đăng ký:");
+                        System.out.println("0. Thoát");
                         String email = sc.nextLine();
+                        if (Objects.equals(email, "0")) {
+                            System.out.println("Thoát đăng ký");
+                            break;
+                        }
                         if (!playerController.checkEmailExist(email) && playerController.checkEmailValidate(email)) {
                             while (true) {
                                 System.out.println("Nhập tên tài khoản (từ 4-15 ký tự có thể gồm cả chữ cái và chữ số)");
+                                System.out.println("0. Thoát");
                                 String userName = sc.nextLine();
+                                if (Objects.equals(userName, "0")) {
+                                    System.out.println("Thoát đăng ký");
+                                    break;
+                                }
                                 if (playerController.checkUserName(userName)) {
                                     while (true) {
                                         System.out.println("Nhập mật khẩu (Từ 7-15 ký tự có thể gồm cả chữ cái in hoa và chữ số):");
+                                        System.out.println("0. Thoát");
                                         String password = sc.nextLine();
-                                        System.out.println("Nhập mật khẩu rút tiền (Gồm 4 chữ số)");
-                                        String passwordWithdaw = sc.nextLine();
-                                        int accountBalance = 0;
-                                        if (playerController.checkPassword(password) && playerController.checkPasswordWithdraw(passwordWithdaw)) {
-                                            RegisterRequest registerRequest = new RegisterRequest(userName, email, password, passwordWithdaw, accountBalance);
-
-                                            playerController.createPlayer(registerRequest);
+                                        if (Objects.equals(password, "0")) {
+                                            System.out.println("Thoát đăng ký");
                                             break;
+                                        }
+                                        if (playerController.checkPassword(password)) {
+                                            while (true) {
+                                                System.out.println("Nhập mật khẩu rút tiền (Gồm 4 chữ số)");
+                                                System.out.println("0. Thoát");
+                                                String passwordWithdaw = sc.nextLine();
+                                                int accountBalance = 0;
+                                                if (Objects.equals(passwordWithdaw, "0")) {
+                                                    System.out.println("Thoát đăng ký");
+                                                    break;
+                                                }
+                                                if (playerController.checkPasswordWithdraw(passwordWithdaw)) {
+                                                    RegisterRequest registerRequest = new RegisterRequest(userName, email, password, passwordWithdaw, accountBalance);
+
+                                                    playerController.createPlayer(registerRequest);
+                                                    break;
+                                                } else {
+                                                    System.out.println("Mật khẩu rút tiền không hợp lệ, nhập lại");
+
+                                                }
+                                            }
                                         } else {
-                                            System.out.println("Mật khẩu hoặc mật khẩu rút tiền không chính xác, nhập lại");
+                                            System.out.println("Mật khẩu không hợp lệ, nhập lại");
                                         }
                                     }
                                     break;

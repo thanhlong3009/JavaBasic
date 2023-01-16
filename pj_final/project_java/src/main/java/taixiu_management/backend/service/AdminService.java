@@ -42,15 +42,7 @@ public class AdminService {
         }
         return admin;
     }
-    // Kiểm tra email admin đã tồn tại chưa
-    public boolean checkEmailExist(String email) {
-        for (Admin a: getAdmins()) {
-            if (a.getEmail().equals(email)){
-                return true;
-            }
-        }
-        return false;
-    }
+
     // Láy ra danh sách người chơi
     public List<Player> getPlayers() {
         return playerRepository.findAll();

@@ -41,10 +41,10 @@ public class PlayerPage {
                     System.out.println("1. Khi bắt đầu chơi nhà cái sẽ tung 3 con xúc xắc và tính điểm");
                     System.out.println("2. Kết quả trả về Xỉu (nếu tổng điểm 3 xúc xắc nhỏ hơn bằng 10), trả về Tài(nếu kết quả lớn hơn 10).");
                     System.out.println("3. Bạn sẽ chọn số tiền đặt cuợc và dự đoán kết quả Tài hay Xỉu.");
-                    System.out.println("     + Nếu dự đoán đúng, bạn nhận về 100% số tiền cuợc với phí cuợc là 2 điểm.");
+                    System.out.println("     + Nếu dự đoán đúng, bạn nhận về 100% số tiền cuợc với phí cuợc là 2$.");
                     System.out.println("     + Nếu dự đoán sai, bạn sẽ mất 100% số tiền cuợc và không mất phí cược");
                     System.out.println("4. Tiền cá cược sẽ ngay lập tức được chuyển vào số dư của bạn sau khi hết ván.");
-                    System.out.println("\n Nếu bạn còn có gì thắc mắc hãy liên hệ ngay đến hotline: 8888.8888 .\n");
+                    System.out.println("\n---> Nếu bạn còn có gì thắc mắc hãy liên hệ ngay đến hotline: 8888.8888 .\n");
                     System.out.println("--------- HẾT -----------\n");
 
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
@@ -69,9 +69,9 @@ public class PlayerPage {
                         System.out.println("CHƯA CÓ CON BẠC NÀO THAM GIA TRÒ CHƠI");
                     } else {
                         System.out.println("\n--------- BẢNG XẾP HẠNG CÁC CON BẠC ---------");
-                        System.out.printf("%-20s%-30s%-20s\n", "USER_NAME", "EMAIL", "ACCOUNT BALANCE");
+                        System.out.printf("%-20s%-30s%-20s%-20s\n", "USER_NAME", "EMAIL", "TOTAL_BET (USD)","BETTING_PROFIT (USD)");
                         for (Player p : players) {
-                            System.out.printf("%-20s%-30s%-20s\n", p.getUserName(), p.getEmail(), p.getAccountBalance());
+                            System.out.printf("%-20s%-30s%-20d%-20d\n", p.getUserName(), p.getEmail(), p.getTotalBet(),p.getBettingProfit());
                         }
                     }
                     for (int i = 0; i < players.size(); i++) {
@@ -85,12 +85,15 @@ public class PlayerPage {
 
                 }
                 case 5: {
-                    System.out.println("---------- THÔNG TIN CÁ NHÂN ---------");
+                    System.out.println("\n---------- THÔNG TIN CÁ NHÂN ---------");
                     System.out.println("Tên người chơi: " + player.getUserName());
                     System.out.println("Email đăng ký: " + player.getEmail());
                     System.out.println("Mật khẩu đăng nhập: " + player.getPassword());
                     System.out.println("Mật khẩu rút tiền: " + player.getPasswordWithdaw());
-                    System.out.println("Số dư tài khoản: " + player.getAccountBalance());
+                    System.out.println("Số dư tài khoản: " + player.getAccountBalance() + " USD");
+                    System.out.println("Tổng cuợc ghi nhận: " + player.getTotalBet() + " USD");
+                    System.out.println(" Lợi nhuận ghi nhận " + player.getBettingProfit() + " USD");
+
                     System.out.println("---------------------------------------");
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
                     String subOption = sc.nextLine();

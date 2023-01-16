@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class DepositAndWithdrawPage {
@@ -55,7 +56,7 @@ public class DepositAndWithdrawPage {
                     DepositRequest depositRequest = new DepositRequest(email, amountDeposit);
                     if (playerController.checkAmount(depositRequest.getAmountDeposit()) && depositRequest.getAmountDeposit() > 0) {
 
-                        System.out.println("Vui lòng chuyển tiền đến STK: 46110000400752 - BIDV - TRẦN THÀNH LONG");
+                        System.out.println("Vui lòng chuyển tiền đến STK: 46110000400752 - BIDV - TRẦN THÀNH LONG  với nội dung là username của bạn.");
                         System.out.println("Ngay sau khi đã chuyển tiền thành công, quý khách hãy bấm xác nhận!!!");
 
                         int subOption = 0;
@@ -104,8 +105,8 @@ public class DepositAndWithdrawPage {
                 }
                 case 2: {
                     System.out.println("\n---- RÚT TIỀN ----");
-                    System.out.println("Bạn có thể rút tiền nhỏ hoặc bằng " + player.getAccountBalance());
-                    System.out.println("Hạn mức rút tối đa cho mỗi lần rút tiền là 99999");
+                    System.out.println("Bạn có thể rút tiền nhỏ hoặc bằng " + player.getAccountBalance() + "$.");
+                    System.out.println("Hạn mức rút tối đa cho mỗi lần rút tiền là 99999$");
                     int amountWithdraw = 0;
                     try {
                         System.out.println("Nhập số tiền bạn muốn rút");
@@ -121,9 +122,11 @@ public class DepositAndWithdrawPage {
                         String passwordWithdraw = sc.nextLine();
                         if (player.getPasswordWithdaw().equals(passwordWithdraw)) {
                             try {
-                                System.out.println("Nhập mã otp để hoàn tất thanh toán");
-                                String otp = sc.nextLine();
-                                if (Objects.equals(otp, "9999")) {
+                                int otpRandom = (int)(Math.random() * 90000 + 1000);
+                                System.out.println("Mã OTP của bạn là: " + otpRandom);
+                                System.out.println("Nhập mã OTP để hoàn tất thanh toán");
+                                int otp = Integer.parseInt(sc.nextLine());
+                                if (otp == otpRandom) {
                                     int subOption = 0;
                                     boolean subIsQuit = false;
                                     // Menu xác nhận thanh toán
@@ -184,9 +187,9 @@ public class DepositAndWithdrawPage {
                 case 3: {
                     List<TransactionHistory> histories = historyController.getHistories(email);
                     System.out.println("\n--------- LỊCH SỬ GIAO DỊCH ------------");
-                    System.out.printf("%-30s%-18s%-10s%-15s%-10s\n","THỜI GIAN","MÃ GIAO DỊCH","TIỀN","HÌNH THỨC","TRẠNG THÁI");
+                    System.out.printf("%-30s%-18s%-14s%-15s%-10s\n","THỜI GIAN","MÃ GIAO DỊCH","SỐ TIỀN (USD)","HÌNH THỨC","TRẠNG THÁI");
                     for (TransactionHistory t:histories) {
-                        System.out.printf("%-30s%-18d%-10d%-15s%-10s\n",t.getTime(),t.getTransactionCode(),t.getAmount(),t.getContent(),t.getStatus());
+                        System.out.printf("%-30s%-18d%-14d%-15s%-10s\n",t.getTime(),t.getTransactionCode(),t.getAmount(),t.getContent(),t.getStatus());
                     }
                     System.out.println("\nẤn phím bất kỳ + Enter để quay lại!!!!");
                     String out = sc.nextLine();

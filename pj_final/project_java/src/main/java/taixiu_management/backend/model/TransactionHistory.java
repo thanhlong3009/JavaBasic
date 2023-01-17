@@ -15,5 +15,5 @@ public class TransactionHistory {
     private int transactionCode;
     private int amount;
     private String content;
-    private String status;
+    private Status status;
 }

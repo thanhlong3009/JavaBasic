@@ -35,6 +35,7 @@ public class PlayGamePage {
 
             switch (option) {
                 case 1: {
+
                     System.out.println("\n-------- BẮT ĐẦU CHƠI --------");
                     int amountBet = 0;
                     // Đặt cuợc
@@ -108,6 +109,12 @@ public class PlayGamePage {
 
                     System.out.println("Nhấn phím bất kỳ + Enter để trở lại");
                     String out = sc.nextLine();
+
+                    // Nếu tài khoản còn dưới 3$ sẽ bắt buộc thoát trò chơi
+                    if (player.getAccountBalance() < 3) {
+                        System.out.println(" Tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng trở lại và nạp thêm tiền");
+                        isQuit = true;
+                    }
                     break;
                 }
                 case 0: {

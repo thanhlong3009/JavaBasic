@@ -3,6 +3,7 @@ package taixiu_management.frontend.player_ui;
 import taixiu_management.backend.controller.HistoryController;
 import taixiu_management.backend.controller.PlayerController;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.Status;
 import taixiu_management.backend.model.TransactionHistory;
 import taixiu_management.backend.request.DepositRequest;
 import taixiu_management.backend.request.HistoryRequest;
@@ -80,7 +81,7 @@ public class DepositAndWithdrawPage {
                                     LocalDateTime timeSub = LocalDateTime.now();
                                     String time = timeSub.toString();
                                     int transactionCode = (int)(Math.random() * 90000 + 1000);
-                                    String status = "DONE";
+                                    Status status = Status.PENDING;
                                     String content = "Nạp tiền";
                                     HistoryRequest historyRequest = new HistoryRequest(email,time,transactionCode,amountDeposit,content,status);
                                     historyController.updateHistory(historyRequest);
@@ -120,19 +121,27 @@ public class DepositAndWithdrawPage {
                     if (playerController.checkAmount(amountWithdraw) && amountWithdraw <= player.getAccountBalance()) {
                         System.out.println("Nhập lại mật khẩu rút tiền: ");
                         String passwordWithdraw = sc.nextLine();
+                        if (Objects.equals(passwordWithdraw, "0")) {
+                            System.out.println("Thoát!!");
+                            break;
+                        }
                         if (player.getPasswordWithdaw().equals(passwordWithdraw)) {
                             try {
                                 int otpRandom = (int)(Math.random() * 90000 + 1000);
                                 System.out.println("Mã OTP của bạn là: " + otpRandom);
                                 System.out.println("Nhập mã OTP để hoàn tất thanh toán");
                                 int otp = Integer.parseInt(sc.nextLine());
+                                if (Objects.equals(passwordWithdraw, "0")) {
+                                    System.out.println("Thoát!!");
+                                    break;
+                                }
                                 if (otp == otpRandom) {
                                     int subOption = 0;
                                     boolean subIsQuit = false;
                                     // Menu xác nhận thanh toán
                                     while (!subIsQuit) {
                                         System.out.println("\n--- XÁC NHẬN THANH TOÁN ---");
-                                        System.out.println("1. Xác nhận rút tiền");
+                                        System.out.println("1. Xác nhận thanh toán");
                                         System.out.println("0. Hủy thanh toán, quay lại");
 
                                         try {
@@ -149,7 +158,7 @@ public class DepositAndWithdrawPage {
                                                 LocalDateTime timeSub = LocalDateTime.now();
                                                 String time = timeSub.toString();
                                                 int transactionCode = (int)(Math.random() * 90000 + 1000);
-                                                String status = "DONE";
+                                                Status status = Status.PENDING;
                                                 String content = "Rút tiền";
                                                 HistoryRequest historyRequest = new HistoryRequest(email,time,transactionCode,amountWithdraw,content,status);
                                                 historyController.updateHistory(historyRequest);

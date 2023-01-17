@@ -1,6 +1,7 @@
 package taixiu_management.backend.request;
 
 import lombok.*;
+import taixiu_management.backend.model.Status;
 
 @Setter
 @Getter
@@ -13,5 +14,5 @@ public class HistoryRequest {
     private int transactionCode;
     private int amount;
     private String content;
-    private String status;
+    private Status status;
 }

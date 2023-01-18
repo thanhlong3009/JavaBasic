@@ -52,7 +52,7 @@ public class PlayerPage {
                     break;
                 }
                 case 2: {
-                    if (playerController.checkAccountBalance(email)) {
+                    if (playerController.checkAvailableAccountBalance(email)) {
                         playGamePage.run(email);
                     } else {
                         System.out.println("Số dư tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng nạp thêm tiền!!");
@@ -90,9 +90,12 @@ public class PlayerPage {
                     System.out.println("Email đăng ký: " + player.getEmail());
                     System.out.println("Mật khẩu đăng nhập: " + player.getPassword());
                     System.out.println("Mật khẩu rút tiền: " + player.getPasswordWithdaw());
-                    System.out.println("Số dư tài khoản: " + player.getAccountBalance() + " USD");
+                    System.out.println("----------------------------------");
+                    System.out.println("Số dư tài khoản thực tế: " + player.getAccountBalance() + " USD");
+                    System.out.println("Số dư tài khoản khả dụng: " + player.getAvailableAccountBalance() + " USD");
+                    System.out.println("Tổng tiền đã nạp: " + player.getTotalDeposit() + " USD");
                     System.out.println("Tổng cuợc ghi nhận: " + player.getTotalBet() + " USD");
-                    System.out.println(" Lợi nhuận ghi nhận " + player.getBettingProfit() + " USD");
+                    System.out.println("Lợi nhuận ghi nhận " + player.getBettingProfit() + " USD");
 
                     System.out.println("---------------------------------------");
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");

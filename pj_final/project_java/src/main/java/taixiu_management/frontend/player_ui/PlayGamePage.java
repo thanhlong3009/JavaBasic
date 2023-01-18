@@ -20,7 +20,8 @@ public class PlayGamePage {
         while (!isQuit) {
             System.out.println("\n---- BỘ MÔN THỂ THAO TÀI XỈU ----");
             System.out.println("Tên nguời chơi: " + player.getUserName());
-            System.out.println("Số dư: " + player.getAccountBalance());
+            System.out.println("Số dư thực tế: " + player.getAccountBalance());
+            System.out.println("Số dư khả dụng: " + player.getAvailableAccountBalance());
             System.out.println("---- SẴNG SÀNG CHỬA ----");
             System.out.println("1. Bắt đầu cá cuợc!!!!!");
             System.out.println("0. Thoát, hết tiền không chơi nữa ");
@@ -41,13 +42,13 @@ public class PlayGamePage {
                     // Đặt cuợc
                     while (true) {
                         try {
-                            System.out.println("Nhập số tiền bạn muốn đặt cược ( 3$ - " + player.getAccountBalance() + "$ )");
+                            System.out.println("Nhập số tiền bạn muốn đặt cược ( 3$ - " + player.getAvailableAccountBalance() + "$ )");
                             amountBet = Integer.parseInt(sc.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Lựa chọn không hợp lệ, nhập lại");
                             continue;
                         }
-                        if (amountBet > 2 && amountBet <= player.getAccountBalance()) {
+                        if (amountBet > 2 && amountBet <= player.getAvailableAccountBalance()) {
                             break;
                         }
                         else {
@@ -111,7 +112,7 @@ public class PlayGamePage {
                     String out = sc.nextLine();
 
                     // Nếu tài khoản còn dưới 3$ sẽ bắt buộc thoát trò chơi
-                    if (player.getAccountBalance() < 3) {
+                    if (player.getAvailableAccountBalance() < 3) {
                         System.out.println(" Tài khoản của quý khách không đủ để tham gia trò chơi, vui lòng trở lại và nạp thêm tiền");
                         isQuit = true;
                     }

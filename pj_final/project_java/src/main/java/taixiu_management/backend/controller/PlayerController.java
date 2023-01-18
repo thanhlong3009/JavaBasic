@@ -41,13 +41,13 @@ public class PlayerController {
     }
 
     // trừ tiền từ tài khoản của bạn, cuợc thua
-    public void loseBet(String email, int amountBet) {
-        playerService.withdrawPlayer(email,amountBet);
+    public void loseBet(String email, int amountBet){
+        playerService.loseBet(email,amountBet);
     }
 
     // Cộng tiền vào tài khoản, cuợc thắng
     public void winBet(String email, int amountBetWin) {
-        playerService.depositPlayer(email,amountBetWin);
+        playerService.winBet(email,amountBetWin);
     }
 
     // Check password có hợp lệ không
@@ -61,8 +61,8 @@ public class PlayerController {
     }
 
     // Check số dư tài khoản để chơi game
-    public boolean checkAccountBalance(String email) {
-        return playerService.checkAccountBalance(email);
+    public boolean checkAvailableAccountBalance(String email) {
+        return playerService.checkAvailableAccountBalance(email);
     }
 
     // check bảng xếp hạng
@@ -93,5 +93,20 @@ public class PlayerController {
     // check mật khẩu thanh toán hợp lệ
     public boolean checkPasswordWithdraw(String passwordWithdaw) {
         return playerService.checkPasswordWithdraw(passwordWithdaw);
+    }
+
+    // Kiểm tra username có tồn tại không
+    public boolean checkUserNameExist(String userName) {
+        return playerService.checkUserNameExist(userName);
+    }
+
+    // trừ số dư tạm thời khi giao dịch rút tiền đang chờ xử lý
+    public void temporaryWithdrawPlayer(String email, int amountWithdraw) {
+        playerService.temporaryWithdrawPlayer(email,amountWithdraw);
+    }
+
+    // Trả lại tiền về số dư ban đầu khi giao dịch rút tiền thất bại
+    public void returnWithdraw(String email, int amount) {
+        playerService.returnWithdraw(email,amount);
     }
 }

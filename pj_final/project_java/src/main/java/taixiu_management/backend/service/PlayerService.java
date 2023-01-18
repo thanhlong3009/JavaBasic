@@ -46,37 +46,30 @@ public class PlayerService {
 
     // Tạo tài khản mới
     public void createPlayer(RegisterRequest registerRequest) {
-
         Player player = new Player();
         player.setEmail(registerRequest.getEmail());
         player.setPassword(registerRequest.getPassword());
         player.setUserName(registerRequest.getUserName());
-        player.setAccountBalance(registerRequest.getAccountBalance());
         player.setPasswordWithdaw(registerRequest.getPasswordWithdaw());
-
         players.add(player);
 
         playerRepository.updateFiles();
-        System.out.println("Tạo tài khoản thành công");
-
     }
 
     // Cộng tiền người chơi(nạp or win) theo email.
     public void depositPlayer(String email, int amountDeposit) {
         Player player = findPlayerByEmail(email);
 
-        player.setTotalBet(player.getTotalBet() + amountDeposit);
-        player.setBettingProfit(player.getBettingProfit() - amountDeposit);
+        player.setTotalDeposit(player.getTotalDeposit() + amountDeposit);
         player.setAccountBalance(player.getAccountBalance() + amountDeposit);
+        player.setAvailableAccountBalance(player.getAvailableAccountBalance() + amountDeposit);
         playerRepository.updateFiles();
     }
 
-    // Trừ tiền người chơi(rút or lose) theo email
+    // Trừ tiền người chơi(số dư thực tế) khi rút theo email
     public void withdrawPlayer(String email, int amountWithdraw) {
         Player player = findPlayerByEmail(email);
 
-        player.setTotalBet(player.getTotalBet() + amountWithdraw);
-        player.setBettingProfit(player.getBettingProfit() - amountWithdraw);
         player.setAccountBalance(player.getAccountBalance() - amountWithdraw);
         playerRepository.updateFiles();
     }
@@ -104,13 +97,50 @@ public class PlayerService {
             @Override
             public int compare(Player o1, Player o2) {
                 //Sử dụng toán tử 3 ngôi
-                return o2.getAccountBalance() - o1.getAccountBalance() > 0 ? 1 : -1;
+                return o2.getBettingProfit() - o1.getBettingProfit() > 0 ? 1 : -1;
             }
         });
 
         return players;
     }
 
+    // trừ tiền ở tài khoản người chơi khi cược thua
+    public void loseBet(String email, int amountBet) {
+        Player player = findPlayerByEmail(email);
+
+        player.setTotalBet(player.getTotalBet() + amountBet);
+        player.setBettingProfit(player.getBettingProfit() - amountBet);
+        player.setAccountBalance(player.getAccountBalance() - amountBet);
+        player.setAvailableAccountBalance(player.getAvailableAccountBalance() - amountBet);
+        playerRepository.updateFiles();
+    }
+
+    // Cộng tiền vào tài khoản
+    public void winBet(String email, int amountBetWin) {
+        Player player = findPlayerByEmail(email);
+
+        player.setTotalBet(player.getTotalBet() + amountBetWin + 2);
+        player.setBettingProfit(player.getBettingProfit() + amountBetWin);
+        player.setAccountBalance(player.getAccountBalance() + amountBetWin);
+        player.setAvailableAccountBalance(player.getAvailableAccountBalance() + amountBetWin);
+        playerRepository.updateFiles();
+    }
+
+    // trừ tiền tạm thời khi đợi xử lý
+    public void temporaryWithdrawPlayer(String email, int amountWithdraw) {
+        Player player = findPlayerByEmail(email);
+        player.setAvailableAccountBalance(player.getAvailableAccountBalance() - amountWithdraw);
+
+        playerRepository.updateFiles();
+    }
+
+    // trả lại tiền khi  xử lý thất bại
+    public void returnWithdraw(String email, int amount) {
+        Player player = findPlayerByEmail(email);
+
+        player.setAvailableAccountBalance(player.getAvailableAccountBalance() + amount);
+        playerRepository.updateFiles();
+    }
 
     // --------------------------------- CÁC METHOD CHECK -------------------------------------
 
@@ -174,13 +204,26 @@ public class PlayerService {
     }
 
     // Kiểm tra số dư tài khoản có lớn hơn 3 không, để tham gia cá cuợc
-    public boolean checkAccountBalance(String email) {
+    public boolean checkAvailableAccountBalance(String email) {
         Player player = findPlayerByEmail(email);
-        if (player.getAccountBalance() >= 3) {
+        if (player.getAvailableAccountBalance() >= 3) {
             return true;
         }
         return false;
     }
+
+    // Kiểm tra username đã tồn tại chưa
+    public boolean checkUserNameExist(String userName) {
+        for(Player p:players) {
+            if (p.getUserName().equals(userName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    //-------------------------------------------------------------------------------------------------
 
 
 

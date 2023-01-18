@@ -2,7 +2,10 @@ package taixiu_management.backend.service;
 
 import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.Status;
+import taixiu_management.backend.model.TransactionHistory;
 import taixiu_management.backend.repository.AdminRepository;
+import taixiu_management.backend.repository.HistoryRepository;
 import taixiu_management.backend.repository.PlayerRepository;
 import taixiu_management.backend.request.LoginRequest;
 
@@ -15,6 +18,8 @@ public class AdminService {
     private final AdminRepository adminRepository = new AdminRepository();
 
     private final PlayerRepository playerRepository = new PlayerRepository();
+
+    private final HistoryRepository historyRepository = new HistoryRepository();
     List<Admin> admins = adminRepository.findAll();
 
     // lấy ra list admin
@@ -61,7 +66,7 @@ public class AdminService {
             @Override
             public int compare(Player o1, Player o2) {
                 //Sử dụng toán tử 3 ngôi
-                return o2.getAccountBalance() - o1.getAccountBalance() > 0 ? 1 : -1;
+                return o2.getBettingProfit() - o1.getBettingProfit() > 0 ? 1 : -1;
             }
         });
         return playersRankings;
@@ -76,5 +81,44 @@ public class AdminService {
             }
         }
         return rs;
+    }
+
+    // Lấy ra các giao dịch cần được xử lý(PENDING)
+    public List<TransactionHistory> getHistoriesPending() {
+        List<TransactionHistory>rs = new ArrayList<>();
+        for (TransactionHistory t: historyRepository.findAll()) {
+            if (t.getStatus().equals(Status.PENDING) ){
+                rs.add(t);
+            }
+        }
+        return rs;
+    }
+
+    // kiểm tra giao dịch có tồn tại theo mã giao dịch
+    public boolean checkTransactionExits(int transactionCode) {
+        for (TransactionHistory t: getHistoriesPending()) {
+            if (t.getTransactionCode() == transactionCode) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Tìm kiếm lịch sử giao dịch theo mã giao dịch
+    public TransactionHistory findTransactionHistoryByCode(int transactionCode) {
+        TransactionHistory rs = new TransactionHistory();
+        for (TransactionHistory t: getHistoriesPending()) {
+            if (t.getTransactionCode() == transactionCode) {
+                rs = t;
+            }
+        }
+        return rs;
+    }
+
+    // Cập nhật trạng thái của giao dịch
+    public void updateStatus(int transactionCode, Status stt) {
+        TransactionHistory rs = findTransactionHistoryByCode(transactionCode);
+        rs.setStatus(stt);
+        historyRepository.updateFiles();
     }
 }

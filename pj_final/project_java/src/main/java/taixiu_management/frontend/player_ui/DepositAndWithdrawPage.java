@@ -9,7 +9,6 @@ import taixiu_management.backend.request.DepositRequest;
 import taixiu_management.backend.request.HistoryRequest;
 import taixiu_management.backend.request.WithdrawRequest;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -77,7 +76,7 @@ public class DepositAndWithdrawPage {
                             }
                             switch (subOption) {
                                 case 1: {
-                                    playerController.depositPlayer(depositRequest);
+
                                     LocalDateTime timeSub = LocalDateTime.now();
                                     String time = timeSub.toString();
                                     int transactionCode = (int)(Math.random() * 90000 + 1000);
@@ -118,7 +117,7 @@ public class DepositAndWithdrawPage {
                     }
 
                     WithdrawRequest withdrawRequest = new WithdrawRequest(email, amountWithdraw);
-                    if (playerController.checkAmount(amountWithdraw) && amountWithdraw <= player.getAccountBalance()) {
+                    if (playerController.checkAmount(amountWithdraw) && amountWithdraw <= player.getAvailableAccountBalance()) {
                         System.out.println("Nhập lại mật khẩu rút tiền: ");
                         String passwordWithdraw = sc.nextLine();
                         if (Objects.equals(passwordWithdraw, "0")) {
@@ -154,7 +153,7 @@ public class DepositAndWithdrawPage {
 
                                         switch (subOption) {
                                             case 1: {
-                                                playerController.withdrawPlayer(withdrawRequest);
+                                                playerController.temporaryWithdrawPlayer(email,amountWithdraw);
                                                 LocalDateTime timeSub = LocalDateTime.now();
                                                 String time = timeSub.toString();
                                                 int transactionCode = (int)(Math.random() * 90000 + 1000);
@@ -162,7 +161,7 @@ public class DepositAndWithdrawPage {
                                                 String content = "Rút tiền";
                                                 HistoryRequest historyRequest = new HistoryRequest(email,time,transactionCode,amountWithdraw,content,status);
                                                 historyController.updateHistory(historyRequest);
-                                                System.out.println("\n Rút tiền thành công!!!");
+                                                System.out.println("\n Yêu cầu rút tiền đã được gửi đi!!!");
                                                 subIsQuit = true;
                                                 break;
                                             }

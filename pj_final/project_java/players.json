@@ -1,38 +1,35 @@
 [
   {
-    "accountBalance": 100,
-    "passwordWithdaw": "1111",
-    "totalBet": 210,
-    "bettingProfit": -210,
+    "accountBalance": 4220,
+    "availableAccountBalance": 4220,
+    "passwordWithdaw": "8888",
+    "totalDeposit": 6000,
+    "totalBet": 10450,
+    "bettingProfit": 2220,
     "userName": "Top1TaiXiu",
     "email": "long",
     "password": "1"
   },
   {
-    "accountBalance": 0,
+    "accountBalance": 1680,
+    "availableAccountBalance": 1680,
     "passwordWithdaw": "8888",
+    "totalDeposit": 1000,
+    "totalBet": 3090,
+    "bettingProfit": 680,
+    "userName": "thanhlongite6",
+    "email": "thanhlongite6@gmail.com",
+    "password": "12345678"
+  },
+  {
+    "accountBalance": 0,
+    "availableAccountBalance": 0,
+    "passwordWithdaw": "8888",
+    "totalDeposit": 0,
     "totalBet": 0,
     "bettingProfit": 0,
     "userName": "shenlongisme",
     "email": "thanhlong4@gmail.com",
-    "password": "12344321"
-  },
-  {
-    "accountBalance": 0,
-    "passwordWithdaw": "8888",
-    "totalBet": 0,
-    "bettingProfit": 0,
-    "userName": "long2",
-    "email": "long2@gmail.com",
-    "password": "12345654"
-  },
-  {
-    "accountBalance": 0,
-    "passwordWithdaw": "8888",
-    "totalBet": 0,
-    "bettingProfit": 0,
-    "userName": "long1",
-    "email": "long1@gmail.com",
     "password": "12345678"
   }
 ]

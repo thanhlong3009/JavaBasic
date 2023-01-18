@@ -5,6 +5,10 @@ import taixiu_management.backend.controller.PlayerController;
 import taixiu_management.backend.exception.NotFoundException;
 import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.Status;
+import taixiu_management.backend.model.TransactionHistory;
+import taixiu_management.backend.request.DepositRequest;
+import taixiu_management.backend.request.WithdrawRequest;
 
 import java.util.List;
 import java.util.Scanner;
@@ -98,6 +102,110 @@ public class AdminPage {
                 }
 
                 case 5: {
+                    int subOption = 0;
+                    boolean subIsQuit = false;
+                    while (!subIsQuit) {
+                        List<TransactionHistory> histories = adminController.getHistoriesPending();
+                        System.out.println("----------CÁC GIAO DỊCH ĐANG CHỜ XỬ LÝ-----------");
+                        System.out.printf("%-31s%-27s%-18s%-14s%-15s%-10s\n","THỜI GIAN","EMAIL","MÃ GIAO DỊCH","SỐ TIỀN (USD)","HÌNH THỨC","TRẠNG THÁI");
+                        for (TransactionHistory t:histories) {
+                            System.out.printf("%-31s%-27s%-18d%-14d%-15s%-10s\n",t.getTime(),t.getEmail(),t.getTransactionCode(),t.getAmount(),t.getContent(),t.getStatus());
+                        }
+                        System.out.println("\n--------------- XỬ LÝ GIAO DỊCH -------------");
+                        System.out.println("1. Chọn giao dịch cần xử lý");
+                        System.out.println("0. Trở về");
+                        try {
+                            System.out.print("Nhập lựa chọn : ");
+                            subOption = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Lựa chọn không hợp lệ, thử lại");
+                            continue;
+                        }
+                        switch (subOption) {
+                            case 1: {
+                                try {
+                                    System.out.print("Nhập mã giao dịch cần xử lý ");
+                                    int transactionCode = Integer.parseInt(sc.nextLine());
+                                    if (adminController.checkTransactionExits(transactionCode)) {
+                                        TransactionHistory transactionHistory = adminController.findTransactionHistoryByCode(transactionCode);
+                                        int subOption1 = 0;
+                                        boolean subIsQuit1 = false;
+                                        while (!subIsQuit1){
+                                            System.out.println("-------- GIAO DỊCH ĐANG XỬ LÝ ----------");
+                                            System.out.printf("%-31s%-27s%-18s%-14s%-15s%-10s\n","THỜI GIAN","EMAIL","MÃ GIAO DỊCH","SỐ TIỀN (USD)","HÌNH THỨC","TRẠNG THÁI");
+                                            System.out.printf("%-31s%-27s%-18d%-14d%-15s%-10s\n",transactionHistory.getTime(),transactionHistory.getEmail(),transactionHistory.getTransactionCode(),transactionHistory.getAmount(),transactionHistory.getContent(),transactionHistory.getStatus());
+                                            System.out.println("\n1. Giao dịch hoàn thành        2.Giao dịch thất bại        0. Thoát");
+                                            try {
+                                                System.out.print("Nhập lựa chọn : ");
+                                                subOption1 = Integer.parseInt(sc.nextLine());
+                                            } catch (NumberFormatException e) {
+                                                System.out.println("Lựa chọn không hợp lệ, thử lại");
+                                                continue;
+                                            }
+                                            switch (subOption1){
+                                                case 1:{
+                                                    Status stt = Status.DONE;
+                                                    adminController.updateStatus(transactionHistory.getTransactionCode(),stt);
+
+                                                    System.out.println("Xác nhận giao dịch");
+                                                    if (transactionHistory.getContent().equals("Nạp tiền")){
+                                                        DepositRequest depositRequest = new DepositRequest(transactionHistory.getEmail(),transactionHistory.getAmount());
+                                                        playerController.depositPlayer(depositRequest);
+                                                    }else if (transactionHistory.getContent().equals("Rút tiền")){
+                                                        WithdrawRequest withdrawRequest = new WithdrawRequest(transactionHistory.getEmail(),transactionHistory.getAmount());
+                                                        playerController.withdrawPlayer(withdrawRequest);
+                                                    }
+                                                    subIsQuit1 = true;
+                                                    break;
+                                                }
+                                                case 2: {
+                                                    if (transactionHistory.getContent().equals("Rút tiền")){
+                                                        playerController.returnWithdraw(transactionHistory.getEmail(),transactionHistory.getAmount());
+                                                    }
+                                                    Status stt = Status.FAILED;
+                                                    adminController.updateStatus(transactionHistory.getTransactionCode(),stt);
+
+                                                    System.out.println("Xác nhận giao dịch");
+                                                    subIsQuit1 =true;
+                                                    break;
+                                                }
+
+                                                case 0: {
+                                                    subIsQuit1 = true;
+                                                    System.out.println("Trở về!!!");
+                                                    break;
+                                                }
+                                                default:{
+                                                    System.out.println("Lựa chọn không chính xác, chọn lại!!");
+                                                }
+                                            }
+                                        }
+                                    }else {
+                                        System.out.println("Mã giao dịch không tồn tại");
+                                        break;
+                                    }
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Lựa chọn không hợp lệ, thử lại");
+                                    continue;
+                                }
+                                break;
+                            }
+
+                            case 0: {
+                                subIsQuit = true;
+                                System.out.println("Trở về!!!!");
+                                break;
+                            }
+                            default: {
+                                System.out.println("Lựa chọn không đúng, chọn lại!!!");
+                            }
+                        }
+                    }
+
+                    break;
+                }
+
+                case 6: {
                     System.out.println("\n---- XÓA NGƯỜI CHƠI THEO USERNAME ----");
                     System.out.println("Nhập username muốn xóa: ");
                     String userName = sc.nextLine();
@@ -110,13 +218,13 @@ public class AdminPage {
                     break;
                 }
 
-                case  6: {
+                case  7: {
                     System.out.println(" Đăng xuất khỏi tài khoản admin");
                     isQuit = true;
                     break;
                 }
 
-                case 7: {
+                case 8: {
                     System.out.println("---- Thoát chương trình ----");
                     System.exit(1);
                     isQuit = true;
@@ -137,8 +245,9 @@ public class AdminPage {
         System.out.println("2 - Xem danh sách người chơi ");
         System.out.println("3 - Bảng xếp hạng người chơi");
         System.out.println("4 - Tìm kiếm tài khoản người chơi (theo email)");
-        System.out.println("5 - Xóa người chơi (theo username)");
-        System.out.println("6 - Đăng xuất");
-        System.out.println("7 - Thoát chương trình");
+        System.out.println("5 - Xử lý giao dịch");
+        System.out.println("6 - Xóa người chơi (theo username)");
+        System.out.println("7 - Đăng xuất");
+        System.out.println("8 - Thoát chương trình");
     }
 }

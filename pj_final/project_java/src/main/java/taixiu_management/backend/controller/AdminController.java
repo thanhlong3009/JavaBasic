@@ -2,6 +2,8 @@ package taixiu_management.backend.controller;
 
 import taixiu_management.backend.model.Admin;
 import taixiu_management.backend.model.Player;
+import taixiu_management.backend.model.Status;
+import taixiu_management.backend.model.TransactionHistory;
 import taixiu_management.backend.request.LoginRequest;
 import taixiu_management.backend.service.AdminService;
 
@@ -15,6 +17,7 @@ public class AdminController {
     public List<Player> getPlayers() {
         return adminService.getPlayers();
     }
+
     // Đăng nhập admin
     public boolean checkLogin(LoginRequest loginRequest) {
         return adminService.checkLogin(loginRequest);
@@ -40,4 +43,26 @@ public class AdminController {
     public List<Player> findPlayersByEmail(String emailFind) {
         return adminService.findPlayersByEmail(emailFind);
     }
+
+    // Lấy ra các giao dịch đang chờ xử lý
+    public List<TransactionHistory> getHistoriesPending() {
+        return adminService.getHistoriesPending();
+    }
+
+    // Kiểm tra giao dịch có tồn tại không bằng mã giao dịch
+    public boolean checkTransactionExits(int transactionCode) {
+        return adminService.checkTransactionExits(transactionCode);
+    }
+
+    // Tìm kiếm giao dịch bằng mã giao dịch
+    public TransactionHistory findTransactionHistoryByCode(int transactionCode) {
+        return adminService.findTransactionHistoryByCode(transactionCode);
+    }
+
+    // Update trạng thái của giao dịch sau khi xử lý
+    public void updateStatus(int transactionCode, Status stt) {
+        adminService.updateStatus(transactionCode,stt);
+    }
 }
+
+

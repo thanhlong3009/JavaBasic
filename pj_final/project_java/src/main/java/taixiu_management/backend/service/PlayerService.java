@@ -35,6 +35,8 @@ public class PlayerService {
         }
         return player;
     }
+
+    // Tìm người chơi theo username
     public Player findPlayerByUserName(String userName) {
         for (Player p : playerRepository.findAll()) {
             if (p.getUserName().equals(userName)) {

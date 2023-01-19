@@ -16,6 +16,8 @@ public class PlayerPage {
 
     private final PlayGamePage playGamePage = new PlayGamePage();
 
+    private final PlayerSupportPage playerSupportPage = new PlayerSupportPage();
+
     public void run(String email) {
         Scanner sc = new Scanner(System.in);
         int option = 0;
@@ -87,15 +89,15 @@ public class PlayerPage {
                 case 5: {
                     System.out.println("\n---------- THÔNG TIN CÁ NHÂN ---------");
                     System.out.println("Tên người chơi: " + player.getUserName());
-                    System.out.println("Email đăng ký: " + player.getEmail());
-                    System.out.println("Mật khẩu đăng nhập: " + player.getPassword());
-                    System.out.println("Mật khẩu rút tiền: " + player.getPasswordWithdaw());
+                    System.out.println("Email đăng ký:  " + player.getEmail());
+                    System.out.println("Mật khẩu đăng nhập: [ " + player.getPassword() + " ]");
+                    System.out.println("Mật khẩu rút tiền: [ " + player.getPasswordWithdaw() + " ]");
                     System.out.println("----------------------------------");
                     System.out.println("Số dư tài khoản thực tế: " + player.getAccountBalance() + " USD");
                     System.out.println("Số dư tài khoản khả dụng: " + player.getAvailableAccountBalance() + " USD");
                     System.out.println("Tổng tiền đã nạp: " + player.getTotalDeposit() + " USD");
-                    System.out.println("Tổng cuợc ghi nhận: " + player.getTotalBet() + " USD");
-                    System.out.println("Lợi nhuận ghi nhận " + player.getBettingProfit() + " USD");
+                    System.out.println("Tổng cược ghi nhận: " + player.getTotalBet() + " USD");
+                    System.out.println("Lợi nhuận ghi nhận: " + player.getBettingProfit() + " USD");
 
                     System.out.println("---------------------------------------");
                     System.out.println("Nhấn phím bất kỳ + Enter để quay lại");
@@ -104,13 +106,23 @@ public class PlayerPage {
                 }
                 case 6: {
                     System.out.println("\n ------ THAY ĐỔI MẬT KHẨU ------");
+                    System.out.println("0. Thoát");
                     System.out.println("Nhập mật khẩu hiện tại");
                     String password = sc.nextLine();
+                    if (password.equals("0")){
+                        System.out.println("Thoát!!!");
+                        break;
+                    }
                     if (player.getPassword().equals(password)) {
+                        // TODO: tách riêng 2 phần nhập mật khẩu mới và nhập lại để kiểm tra
                         System.out.println("Nhập mật khẩu mới");
                         String newPassword = sc.nextLine();
                         System.out.println("Nhập lại mật khẩu mới");
                         String subNewPassword = sc.nextLine();
+                        if (newPassword.equals("0") || subNewPassword.equals("0")){
+                            System.out.println("Thoát!!!");
+                            break;
+                        }
                         if (newPassword.equals(subNewPassword)) {
                             ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(email, newPassword);
                             playerController.changePassword(changePasswordRequest);
@@ -123,51 +135,51 @@ public class PlayerPage {
                     break;
                 }
                 case 7: {
-
-                    int supportOption = 0;
-                    boolean subIsQuit = false;
-                    while (!subIsQuit) {
-                        showMenuSupport();
-                        try {
-                            System.out.print("Nhập lựa chọn : ");
-                            supportOption = Integer.parseInt(sc.nextLine());
-                        } catch (NumberFormatException e) {
-                            System.out.println("Lựa chọn không hợp lệ");
-                            continue;
-                        }
-
-                        switch (supportOption) {
-                            case 1: {
-                                System.out.println("Bạn đang có số thứ tự 23 trong hàng chờ, thời gian ước tính 15 phút .........");
-                                System.out.println("\nẤn phím bất kỳ để trở lại ...");
-                                String out = sc.nextLine();
-                                break;
-                            }
-                            case 2: {
-                                List<Admin> admins = playerController.getAdmins();
-                                if (admins.isEmpty()) {
-                                    System.out.println("Không có admin nào");
-                                } else {
-                                    System.out.println("\n----- DANH SÁCH ADMIN -----");
-                                    System.out.printf("%-20s%-30s\n", "USER_NAME", "EMAIL");
-                                    for (Admin a : admins) {
-                                        System.out.printf("%-20s%-30s\n", a.getUserName(), a.getEmail());
-                                    }
-                                }
-                                System.out.println("Hãy liên hệ trực tiếp với 1 trong các admin qua email để nhận được sự hỗ trợ sớm nhất!!!");
-                                System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
-                                String out = sc.nextLine();
-                                break;
-                            }
-                            case 0: {
-                                subIsQuit = true;
-                                break;
-                            }
-                            default: {
-                                System.out.println("Lựa chọn không hợp lệ, nhập lại");
-                            }
-                        }
-                    }
+                    playerSupportPage.run(email);
+//                    int supportOption = 0;
+//                    boolean subIsQuit = false;
+//                    while (!subIsQuit) {
+//                        showMenuSupport();
+//                        try {
+//                            System.out.print("Nhập lựa chọn : ");
+//                            supportOption = Integer.parseInt(sc.nextLine());
+//                        } catch (NumberFormatException e) {
+//                            System.out.println("Lựa chọn không hợp lệ");
+//                            continue;
+//                        }
+//
+//                        switch (supportOption) {
+//                            case 1: {
+//                                System.out.println("Bạn đang có số thứ tự 23 trong hàng chờ, thời gian ước tính 15 phút .........");
+//                                System.out.println("\nẤn phím bất kỳ để trở lại ...");
+//                                String out = sc.nextLine();
+//                                break;
+//                            }
+//                            case 2: {
+//                                List<Admin> admins = playerController.getAdmins();
+//                                if (admins.isEmpty()) {
+//                                    System.out.println("Không có admin nào");
+//                                } else {
+//                                    System.out.println("\n----- DANH SÁCH ADMIN -----");
+//                                    System.out.printf("%-20s%-30s\n", "USER_NAME", "EMAIL");
+//                                    for (Admin a : admins) {
+//                                        System.out.printf("%-20s%-30s\n", a.getUserName(), a.getEmail());
+//                                    }
+//                                }
+//                                System.out.println("Hãy liên hệ trực tiếp với 1 trong các admin qua email để nhận được sự hỗ trợ sớm nhất!!!");
+//                                System.out.println("\nNhấn phím bất kỳ + Enter để quay lại");
+//                                String out = sc.nextLine();
+//                                break;
+//                            }
+//                            case 0: {
+//                                subIsQuit = true;
+//                                break;
+//                            }
+//                            default: {
+//                                System.out.println("Lựa chọn không hợp lệ, nhập lại");
+//                            }
+//                        }
+//                    }
                     break;
                 }
                 case 8: {
@@ -189,12 +201,7 @@ public class PlayerPage {
         }
     }
 
-    private void showMenuSupport() {
-        System.out.println("\n ---- HỖ TRỢ KHÁCH HÀNG -----");
-        System.out.println("1. Live Chat");
-        System.out.println("2. Liên hệ trực tiếp với các admin");
-        System.out.println("0. Quay lại");
-    }
+
 
     public static void showMenuPlayer() {
         System.out.println("1 - Hướng dẫn ");

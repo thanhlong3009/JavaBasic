@@ -66,10 +66,11 @@ public class SignInPage {
                 case 2 -> {
 
                     System.out.println("------------- ĐĂNG KÝ TÀI KHOẢN ------------");
+                    System.out.println("0. Thoát");
                     boolean subIsquit = false;
                     while (!subIsquit) {
                         System.out.println("Nhập email đăng ký:");
-                        System.out.println("0. Thoát");
+
                         String email = sc.nextLine();
                         if (Objects.equals(email, "0")) {
                             subIsquit = true;

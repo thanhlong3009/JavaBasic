@@ -109,4 +109,9 @@ public class PlayerController {
     public void returnWithdraw(String email, int amount) {
         playerService.returnWithdraw(email,amount);
     }
+
+    // Kiểu tra sô điện thoại vừa nhập có đúng định dạng không
+    public boolean checkPhoneWithdraw(String phoneWithdraw) {
+        return playerService.checkPhoneWithdraw(phoneWithdraw);
+    }
 }

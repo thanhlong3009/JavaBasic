@@ -126,21 +126,22 @@ public class DepositAndWithdrawPage {
                         }
                         if (player.getPasswordWithdaw().equals(passwordWithdraw)) {
                             try {
-                                int otpRandom = (int)(Math.random() * 90000 + 1000);
-                                System.out.println("Mã OTP của bạn là: " + otpRandom);
-                                System.out.println("Nhập mã OTP để hoàn tất thanh toán");
-                                int otp = Integer.parseInt(sc.nextLine());
+                                System.out.println("Nhập số điện thoại bạn muốn rút tiền về với hình thức thẻ cào điện thoại");
+                                String phoneWithdraw = sc.nextLine();
                                 if (Objects.equals(passwordWithdraw, "0")) {
                                     System.out.println("Thoát!!");
                                     break;
                                 }
-                                if (otp == otpRandom) {
+                                if (playerController.checkPhoneWithdraw(phoneWithdraw)) {
                                     int subOption = 0;
                                     boolean subIsQuit = false;
                                     // Menu xác nhận thanh toán
                                     while (!subIsQuit) {
-                                        System.out.println("\n--- XÁC NHẬN THANH TOÁN ---");
-                                        System.out.println("1. Xác nhận thanh toán");
+                                        System.out.println("\n--- XÁC NHẬN LẠI GIAO DỊCH ---");
+                                        System.out.println("Số điện thoại nhận tiền: " + phoneWithdraw);
+                                        System.out.println("Số tiền nạp điện thoại: " + amountWithdraw + " USD");
+                                        System.out.println("Lưu ý: Bạn hãy kiểm tra lại lần cuối số điện thoại giao dịch, chúng tôi sẽ không giải quyết các vần đề liên quan đến sai số điện thoai.");
+                                        System.out.println("\n1. Xác nhận giao dịch");
                                         System.out.println("0. Hủy thanh toán, quay lại");
 
                                         try {
@@ -176,7 +177,7 @@ public class DepositAndWithdrawPage {
                                         }
                                     }
                                 } else {
-                                    System.out.println("Nhập mã otp thất bại, thoát");
+                                    System.out.println("Số điện thoại không hợp lệ, thoát!");
                                 }
                             } catch (NumberFormatException e) {
                                 System.out.println("Lựa chọn không hợp lệ, thử lại");

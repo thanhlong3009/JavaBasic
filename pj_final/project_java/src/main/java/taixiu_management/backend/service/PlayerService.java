@@ -224,6 +224,12 @@ public class PlayerService {
         return false;
     }
 
+    // Kiểm tra số điện thoại rút tiền có đúng định dang không
+    public boolean checkPhoneWithdraw(String phoneWithdraw) {
+        String AMOUNT_PATTERN = "[0-9]{10,11}$";
+        return Pattern.matches(AMOUNT_PATTERN, phoneWithdraw);
+    }
+
 
     //-------------------------------------------------------------------------------------------------
 

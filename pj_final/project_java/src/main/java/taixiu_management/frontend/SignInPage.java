@@ -8,6 +8,7 @@ import taixiu_management.backend.request.ChangePasswordRequest;
 import taixiu_management.backend.request.LoginRequest;
 import taixiu_management.backend.request.RegisterRequest;
 import taixiu_management.frontend.player_ui.PlayerPage;
+import taixiu_management.frontend.player_ui.PlayerSupportPage;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -144,6 +145,12 @@ public class SignInPage {
                 }
                 case 4 -> {
                     isQuit = true;
+
+                }
+                case 5 -> {
+                    String email = "long";
+                    PlayerSupportPage playerSupportPage = new PlayerSupportPage();
+                    playerSupportPage.run(email);
 
                 }
                 default -> {

@@ -147,12 +147,6 @@ public class SignInPage {
                     isQuit = true;
 
                 }
-                case 5 -> {
-                    String email = "long";
-                    PlayerSupportPage playerSupportPage = new PlayerSupportPage();
-                    playerSupportPage.run(email);
-
-                }
                 default -> {
                     System.out.println("Lựa chọn không hợp lệ");
 

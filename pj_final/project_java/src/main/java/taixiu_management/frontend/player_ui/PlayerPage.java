@@ -114,7 +114,6 @@ public class PlayerPage {
                         break;
                     }
                     if (player.getPassword().equals(password)) {
-                        // TODO: tách riêng 2 phần nhập mật khẩu mới và nhập lại để kiểm tra
                         System.out.println("Nhập mật khẩu mới");
                         String newPassword = sc.nextLine();
                         System.out.println("Nhập lại mật khẩu mới");

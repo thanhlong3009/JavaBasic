@@ -33,11 +33,12 @@ public class PlayerSupportPage {
             switch (option) {
 
                 case 1: {
-                    System.out.println("\n ------------- HỖ TRỢ TỰ ĐỘNG --------------");
-                    System.out.println("1. Nạp tiền\n2. Rút tiền\n3. Tài khoản\n4. Sản phẩm\n0. Quay lại");
+
                     int subOption = 0;
                     boolean subIsQuit = false;
                     while (!subIsQuit) {
+                        System.out.println("\n ------------- HỖ TRỢ TỰ ĐỘNG --------------");
+                        System.out.println("1. Nạp tiền\n2. Rút tiền\n3. Tài khoản\n4. Sản phẩm\n0. Quay lại");
                         try {
                             System.out.print("Nhập lựa chọn : ");
                             subOption = Integer.parseInt(sc.nextLine());
@@ -52,6 +53,7 @@ public class PlayerSupportPage {
                                 System.out.println("2. Hạn mức nạp tiền: tối thiểu 1$, tối đa 99999$.");
                                 System.out.println("3. Kiểm tra lệnh nạp: các bạn có thể kiểm tra lịch sử giao dịch tại mục [ Nạp/Rút tiền ] trên giao diện người chơi");
                                 System.out.println("4. Số tài khoản SHENLONG: nhà cái SHENLONG hiện đang sử dụng 1 tài khoản ngân hàng duy nhất [ 46110000400752 | BIDV | Trần Thành Long ].");
+                                System.out.println("5. Huớng dẫn rút tiền: \n   Di chuyển đến mục nạp tiền -> Chọn số tiền cần nạp -> Chuyển tiền đến số tài khoản nhà cái -> Chờ xác nhận từ admin.");
                                 System.out.println("------------------------------");
                                 System.out.println("Nhập một phím bất kỳ để thoát");
                                 String out  = sc.nextLine();
@@ -62,21 +64,34 @@ public class PlayerSupportPage {
                                 System.out.println("1. Hình thức: Rút tiền qua thẻ cào điện thoại.");
                                 System.out.println("2. Hạn mức rút tiền: tối thiểu 1$, tối đa 99999$.");
                                 System.out.println("3. Kiểm tra lệnh rút: các bạn có thể kiểm tra lịch sử giao dịch tại mục [ Nạp/Rút tiền ] trên giao diện người chơi");
-                                System.out.println("4. ");
+                                System.out.println("4. Huớng dẫn rút tiền: \n   Di chuyển đến mục rút tiền -> Chọn số tiền cần rút -> Nhập mật khẩu thanh toán -> Chờ xác nhận từ admin.");
+                                System.out.println("------------------------------");
+                                System.out.println("Nhập một phím bất kỳ để thoát");
+                                String out  = sc.nextLine();
                                 break;
                             }
 
                             case 3: {
                                 System.out.println("--------- TÀI KHOẢN ---------");
-                                System.out.println("1. Hướng dẫn tạo tài khoản");
-                                System.out.println("2. Quên mật khẩu");
-                                System.out.println("3. ");
+                                System.out.println("1. Với mỗi email bạn chỉ có thể tạo được duy nhất 1 tài khoản.");
+                                System.out.println("2. Bạn có thể lấy lại mật khẩu tại mục [3. Quên mật khẩu] hoặc tự thay đổi mật khẩu cá nhân của mình tại [Thay đổi mật khẩu].");
+                                System.out.println("3. Số dư tài khoản của bạn sẽ được cập nhật liên tục sau mỗi ván game.");
+                                System.out.println("4. Thông tin bảng xếp hạng của bạn sẽ được cập nhật liên tục sau mỗi ván game dựa vào tổng lợi nhuận ghi nhân.");
+                                System.out.println("5. Nếu có thêm bất kì vấn đề phát sinh nào, bạn hãy liên hệ trực tiếp với các admin để nhận được sự hỗ trợ sớm nhất");
+                                System.out.println("------------------------------");
+                                System.out.println("Nhập một phím bất kỳ để thoát");
+                                String out  = sc.nextLine();
                                 break;
                             }
 
                             case 4: {
                                 System.out.println("-------- SẢN PHẨM ----------");
-                                
+                                System.out.println("Thị trường các cuợc online đang ngày càng phát triển, trong đó Tài Xỉu là trò chơi đang được các Bet thủ săn đón từng ngày.");
+                                System.out.println("Chính vì vậy, sân chơi cung cấp game tài xỉu SHENLONG đã được ra đời để đáp ứng những nhu cầu đó. Nhà cái SHENLONG là một\n" +
+                                                   "trong các đơn vị tiên phong áp dụng sớm nhất các công nghệ hiện đại. ");
+                                System.out.println("SHENLONG cung cấp game tài xỉu uy tín, cách chơi đơn giản, phí cuợc cực thấp. ");
+                                System.out.println("Nhà cái SHENLONG ra mất lần đầu tiên vào tháng 12 năm 2022. Dù mới chỉ có vài tháng hoạt động nhưng tên tuổi nhà cái đã vươn tầm châu lục.");
+
                                 break;
                             }
 

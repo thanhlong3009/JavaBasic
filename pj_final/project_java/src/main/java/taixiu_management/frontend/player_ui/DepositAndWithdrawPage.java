@@ -99,7 +99,7 @@ public class DepositAndWithdrawPage {
                             }
                         }
                     } else {
-                        System.out.println("Nhập số tiền muốn nạp không chính xác");
+                        System.out.println("Nhập số tiền muốn nạp không trong hạn mức, thoát!");
                     }
                     break;
                 }
@@ -107,6 +107,7 @@ public class DepositAndWithdrawPage {
                     System.out.println("\n---- RÚT TIỀN ----");
                     System.out.println("Bạn có thể rút tiền nhỏ hoặc bằng " + player.getAccountBalance() + "$.");
                     System.out.println("Hạn mức rút tối đa cho mỗi lần rút tiền là 99999$");
+                    System.out.println("0. Nhấn 0 để thoát rút tiền bất cứ lúc nào!!!");
                     int amountWithdraw = 0;
                     try {
                         System.out.println("Nhập số tiền bạn muốn rút");
@@ -115,9 +116,12 @@ public class DepositAndWithdrawPage {
                         System.out.println("Lựa chọn không hợp lệ, thử lại");
                         continue;
                     }
-
+                    if (amountWithdraw == 0) {
+                        System.out.println("Thoát!!");
+                        break;
+                    }
                     WithdrawRequest withdrawRequest = new WithdrawRequest(email, amountWithdraw);
-                    if (playerController.checkAmount(amountWithdraw) && amountWithdraw <= player.getAvailableAccountBalance()) {
+                    if (playerController.checkAmount(amountWithdraw) && amountWithdraw <= player.getAvailableAccountBalance() && amountWithdraw > 0) {
                         System.out.println("Nhập lại mật khẩu rút tiền: ");
                         String passwordWithdraw = sc.nextLine();
                         if (Objects.equals(passwordWithdraw, "0")) {
@@ -126,7 +130,7 @@ public class DepositAndWithdrawPage {
                         }
                         if (player.getPasswordWithdaw().equals(passwordWithdraw)) {
                             try {
-                                System.out.println("Nhập số điện thoại bạn muốn rút tiền về với hình thức thẻ cào điện thoại");
+                                System.out.println("Nhập số điện thoại bạn muốn rút tiền về với hình thức thẻ cào điện thoại (10 đến 11 chữ số).");
                                 String phoneWithdraw = sc.nextLine();
                                 if (Objects.equals(passwordWithdraw, "0")) {
                                     System.out.println("Thoát!!");

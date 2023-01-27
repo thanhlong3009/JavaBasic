@@ -78,5 +78,13 @@
     "amount": 200,
     "content": "Rút tiền",
     "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-27T21:16:50.414595",
+    "transactionCode": 49763,
+    "amount": 3,
+    "content": "Nạp tiền",
+    "status": "DONE"
   }
 ]

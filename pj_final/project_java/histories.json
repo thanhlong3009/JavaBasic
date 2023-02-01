@@ -86,5 +86,21 @@
     "amount": 3,
     "content": "Nạp tiền",
     "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-28T09:37:02.316991",
+    "transactionCode": 84765,
+    "amount": 100,
+    "content": "Nạp tiền",
+    "status": "DONE"
+  },
+  {
+    "email": "long",
+    "time": "2023-01-28T09:38:30.586971",
+    "transactionCode": 37451,
+    "amount": 100,
+    "content": "Rút tiền",
+    "status": "DONE"
   }
 ]

@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cbeacf6-7d8c-48fc-b110-8f1f7b2cf0db" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/histories.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/histories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/players.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/players.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/controller/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/request/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/backend/service/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/AdminPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/SignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/SignInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/player_ui/DepositAndWithdrawPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/src/main/java/taixiu_management/frontend/player_ui/DepositAndWithdrawPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/AdminService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/AdminService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/PlayerService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/PlayerService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/backend/service/PlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/AdminPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/SignInPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/SignInPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/player_ui/DepositAndWithdrawPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../pj_final/project_java/target/classes/taixiu_management/frontend/player_ui/DepositAndWithdrawPage.class" afterDir="false" />
-    </list>
+    <list default="true" id="5cbeacf6-7d8c-48fc-b110-8f1f7b2cf0db" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,23 +29,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/tranthanhlong/TechMaster/JAVA/JavaBasic/new_pj/ new_project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Test">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="taixiu_management.Test" />
@@ -136,6 +117,7 @@
       <workItem from="1673770817831" duration="22000" />
       <workItem from="1673788978869" duration="556000" />
       <workItem from="1673855507282" duration="638000" />
+      <workItem from="1676816916646" duration="21000" />
     </task>
     <servers />
   </component>

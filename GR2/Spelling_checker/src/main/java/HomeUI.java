@@ -120,6 +120,7 @@ public class HomeUI {
         }
     }
 
+
     private static void subMenu() {
         System.out.println("------- DANH SÁCH CÁC FILE KIỂM TRA ------");
         System.out.println("1. check1.txt");
@@ -133,9 +134,9 @@ public class HomeUI {
         System.out.println("1. Kiểm tra đầu vào từ 1 file cho sẵn");
         System.out.println("2. Kiểm tra chính tả câu tiếng Anh");
         System.out.println("3. Tìm kiếm từ điển tiếng Anh");
-        System.out.println("4. Tìm kiếm từ điển tiếng Anh");
-        System.out.println("5. Chỉnh sửa từ điển tiếng Anh");
-        System.out.println("6. Chỉnh sửa từ điển danh từ riêng");
+        System.out.println("4. Tìm kiếm từ điển danh từ riêng");
+        System.out.println("5. Bổ sung từ điển tiếng Anh");
+        System.out.println("6. Bổ sung từ điển danh từ riêng");
         System.out.println("0. Thoát");
     }
 }

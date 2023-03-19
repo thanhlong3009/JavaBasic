@@ -22,6 +22,8 @@ Adrian
 Adriana
 Adrianna
 Adriel
+Afghanistan
+African
 Aidan
 Aiden
 Aimee
@@ -39,6 +41,7 @@ Alannah
 Alastair
 Alayna
 Alba
+Albania
 Albert
 Alberta
 Alden
@@ -58,6 +61,7 @@ Alfie
 Alfonso
 Alfred
 Alfredo
+Algeria
 Ali
 Alice
 Alicia
@@ -95,8 +99,8 @@ Amie
 Amina
 Amir
 Amira
-Amiya
 Amit
+Amiya
 Amiyah
 Amos
 Amy
@@ -109,6 +113,7 @@ Anaya
 Anders
 Anderson
 Andi
+Andorra
 Andre
 Andrea
 Andres
@@ -123,6 +128,7 @@ Angeline
 Angelique
 Angelo
 Angie
+Angola
 Anika
 Anisa
 Anissa
@@ -147,6 +153,7 @@ Annika
 Annmarie
 Ansley
 Anthony
+Antigua
 Antoine
 Anton
 Antonia
@@ -159,6 +166,7 @@ Araceli
 Archer
 Archibald
 Archie
+Argentina
 Ari
 Aria
 Ariana
@@ -169,6 +177,7 @@ Arielle
 Arjun
 Armando
 Armani
+Armenia
 Arnold
 Aron
 Arturo
@@ -189,6 +198,8 @@ Augustine
 Augustus
 Aurora
 Austin
+Australia
+Austria
 Autumn
 Ava
 Avery
@@ -207,15 +218,21 @@ Aysha
 Azaan
 Azaria
 Azariah
+Azerbaijan
 Aziza
 Azra
 Azzurra
 Babette
+Bahamas
+Bahrain
 Bailee
 Bailey
+Bangladesh
+Barbados
 Barbara
 Barbie
 Barbra
+Barbuda
 Barney
 Barrett
 Bart
@@ -226,10 +243,14 @@ Baylee
 Beatrice
 Beau
 Beckett
+Belarus
+Belgium
+Belize
 Bella
 Belle
 Ben
 Benedict
+Benin
 Benjamin
 Bennett
 Bennie
@@ -251,6 +272,7 @@ Betty
 Bettye
 Beulah
 Beverly
+Bhutan
 Bianca
 Bill
 Billie
@@ -266,10 +288,13 @@ Bob
 Bobbi
 Bobbie
 Bobby
+Bolivia
 Bonnie
 Booker
 Boris
+Bosnia
 Boston
+Botswana
 Bowen
 Boyd
 Brad
@@ -291,6 +316,7 @@ Brayden
 Braydon
 Braylen
 Braylon
+Brazil
 Breanna
 Breanne
 Bree
@@ -328,6 +354,7 @@ Brooklyn
 Brooklynn
 Brooks
 Bruce
+Brunei
 Bruno
 Bryan
 Bryanna
@@ -338,7 +365,13 @@ Brylee
 Brynlee
 Brynn
 Bryson
+Bulgaria
+Burkina
+Burma
+Burundi
 Byron
+CAR
+Cabo Verde
 Cade
 Caden
 Cadence
@@ -348,7 +381,9 @@ Caitlyn
 Cale
 Caleb
 Calvin
+Cambodia
 Cameron
+Cameroon
 Camila
 Camilla
 Camille
@@ -356,6 +391,7 @@ Camilo
 Campbell
 Camren
 Camryn
+Canada
 Candace
 Candi
 Candice
@@ -401,6 +437,8 @@ Cedric
 Celeste
 Celia
 Celine
+Central
+Chad
 Chad
 Chaim
 Chance
@@ -425,6 +463,8 @@ Cherish
 Cheryl
 Chester
 Cheyenne
+Chile
+China
 Chloe
 Chris
 Christa
@@ -467,9 +507,11 @@ Colette
 Colin
 Colleen
 Collin
+Colombia
 Colt
 Colten
 Colton
+Comoros
 Conner
 Connie
 Conrad
@@ -487,6 +529,8 @@ Cornelius
 Cortez
 Cortney
 Cory
+Costa
+Cote
 Courtney
 Coy
 Craig
@@ -494,15 +538,19 @@ Cristian
 Cristina
 Cristobal
 Cristopher
+Croatia
 Crosby
 Cruz
 Crystal
+Cuba
 Cullen
 Curt
 Curtis
 Cynthia
+Cyprus
 Cyril
 Cyrus
+Czech
 Daisy
 Dakota
 Dale
@@ -579,32 +627,33 @@ Deja
 Dejah
 Dejon
 Delaney
-Delia
-Delilah
-Della
-Delmar
-Delores
+Delaney
 Delaney
 Delia
+Delia
+Delia
+Delilah
+Delilah
 Delilah
 Della
+Della
+Della
 Delmar
+Delmar
+Delmar
+Delores
+Delores
 Delores
 Delphine
-Delaney
-Delia
-Delilah
-Della
-Delmar
-Delores
 Delphine
 Demarcus
 Demario
-Demetrius
 Demetria
+Demetrius
 Demi
 Dena
 Denise
+Denmark
 Dennis
 Denny
 Denver
@@ -641,6 +690,7 @@ Dionne
 Dirk
 Dixie
 Django
+Djibouti
 Doc
 Dolly
 Dolores
@@ -650,6 +700,8 @@ Domenick
 Domenico
 Domingo
 Dominic
+Dominica
+Dominican
 Dominick
 Dominique
 Don
@@ -689,6 +741,7 @@ Easter
 Easton
 Ebony
 Echo
+Ecuador
 Ed
 Eddie
 Eddy
@@ -705,10 +758,12 @@ Edwardo
 Edwin
 Efrain
 Efren
+Egypt
+Eileen
 Eileen
 Einar
-Eileen
 Eithan
+El Salvador
 Elaina
 Elaine
 Elbert
@@ -766,9 +821,9 @@ Emely
 Emerald
 Emerson
 Emery
-Emilee
 Emil
 Emile
+Emilee
 Emilia
 Emiliano
 Emilie
@@ -794,6 +849,7 @@ Ericka
 Erik
 Erika
 Erin
+Eritrea
 Erma
 Erna
 Ernest
@@ -812,11 +868,14 @@ Estella
 Estelle
 Ester
 Esther
+Estonia
 Estrella
+Eswatini
 Ethan
 Ethel
 Ethelene
 Ethelyn
+Ethiopia
 Etta
 Ettie
 Eudora
@@ -847,6 +906,7 @@ Fabiola
 Faith
 Fallon
 Fanny
+Faso
 Fatima
 Fawn
 Fay
@@ -861,8 +921,10 @@ Fern
 Fernanda
 Ferne
 Fidel
+Fiji
 Filiberto
 Filomena
+Finland
 Finn
 Finnegan
 Fiona
@@ -875,6 +937,7 @@ Floy
 Floyd
 Forrest
 Foster
+France
 Frances
 Francesca
 Francesco
@@ -902,6 +965,7 @@ Frida
 Frieda
 Fritz
 Gabe
+Gabon
 Gabriel
 Gabriela
 Gabriele
@@ -912,6 +976,7 @@ Gage
 Gail
 Galen
 Galilea
+Gambia
 Gannon
 Garland
 Garnet
@@ -937,6 +1002,7 @@ Genoveva
 Geoffrey
 George
 Georgette
+Georgia
 Georgiana
 Georgianna
 Georgina
@@ -950,22 +1016,24 @@ Gerhardt
 Geri
 Germaine
 German
+Germany
 Gerri
 Gerry
 Gertrude
+Ghana
 Gia
 Giada
 Giancarlo
 Gianna
 Gideon
 Gidget
-Gilda
-Giles
-Gillian
 Gilbert
 Gilberto
 Gilda
+Gilda
 Giles
+Giles
+Gillian
 Gillian
 Gilmore
 Gina
@@ -998,10 +1066,12 @@ Graham
 Grant
 Grayce
 Grayson
+Greece
 Greg
 Gregg
 Gregorio
 Gregory
+Grenada
 Greta
 Gretchen
 Grey
@@ -1009,12 +1079,16 @@ Greyson
 Griffin
 Griselda
 Guadalupe
+Guatemala
+Guinea
+Guinea-Bissau
 Gunnar
 Gunner
 Gus
 Gussie
 Gustav
 Gustavo
+Guyana
 Gwen
 Gwendolyn
 Hadassah
@@ -1023,6 +1097,7 @@ Hadley
 Haiden
 Hailee
 Hailey
+Haiti
 Haleigh
 Haley
 Halie
@@ -1066,6 +1141,7 @@ Henriette
 Henry
 Herbert
 Herman
+Herzegovina
 Hettie
 Hezekiah
 Hilario
@@ -1081,6 +1157,7 @@ Holden
 Holland
 Holly
 Homer
+Honduras
 Hope
 Horace
 Houston
@@ -1090,11 +1167,13 @@ Hudson
 Hugh
 Hugo
 Humberto
+Hungary
 Hunter
 Hussein
 Hyman
 Ian
 Ibrahim
+Iceland
 Ida
 Idalia
 Ignacio
@@ -1108,9 +1187,11 @@ Imelda
 Immanuel
 Imogene
 India
+India
 Indiana
 Indigo
 Indira
+Indonesia
 Ines
 Inez
 Infant
@@ -1119,6 +1200,9 @@ Iola
 Iona
 Ione
 Ira
+Iran
+Iraq
+Ireland
 Ireland
 Irene
 Iris
@@ -1138,8 +1222,11 @@ Isaias
 Isidro
 Isis
 Isla
+Islands
+Israel
 Israel
 Issac
+Italy
 Itzel
 Iva
 Ivan
@@ -1180,6 +1267,7 @@ Jaleah
 Jalen
 Jaliyah
 Jalyn
+Jamaica
 Jamal
 Jamar
 Jamel
@@ -1203,6 +1291,7 @@ Janis
 Janiya
 Janiyah
 Jannet
+Japan
 Jared
 Jarell
 Jaren
@@ -1334,8 +1423,8 @@ Johnnie
 Johnny
 Johnpaul
 Johnson
-Jolie
 Jolene
+Jolie
 Jon
 Jonah
 Jonas
@@ -1344,6 +1433,7 @@ Jonathon
 Jone
 Jones
 Joni
+Jordan
 Jorge
 Jorja
 Jose
@@ -1387,8 +1477,8 @@ Julius
 June
 Junior
 Justice
-Justina
 Justin
+Justina
 Justine
 Juwan
 Kade
@@ -1456,8 +1546,8 @@ Kavita
 Kay
 Kaya
 Kaycee
-Kaydence
 Kayden
+Kaydence
 Kaydence
 Kayla
 Kaylee
@@ -1472,6 +1562,7 @@ Kaylin
 Kaylyn
 Kaylynn
 Kaysen
+Kazakhstan
 Keagan
 Keanu
 Keaton
@@ -1500,6 +1591,7 @@ Kennedi
 Kennedy
 Kenneth
 Kenya
+Kenya
 Kenzie
 Keon
 Keri
@@ -1508,8 +1600,8 @@ Kerry
 Keshaun
 Keshawn
 Keshia
-Kevon
 Kevin
+Kevon
 Keyla
 Keyon
 Keyonna
@@ -1537,6 +1629,7 @@ Kinsley
 Kip
 Kira
 Kirby
+Kiribati
 Kirk
 Kirsten
 Kirstin
@@ -1555,8 +1648,10 @@ Kole
 Konnor
 Kora
 Korbin
+Korea
 Korey
 Kori
+Kosovo
 Kourtney
 Kraig
 Kris
@@ -1577,6 +1672,7 @@ Krystina
 Krystle
 Kurt
 Kurtis
+Kuwait
 Kya
 Kyan
 Kyara
@@ -1589,6 +1685,7 @@ Kymani
 Kynlee
 Kyra
 Kyree
+Kyrgyzstan
 Kyrie
 Kyson
 Lacey
@@ -1609,13 +1706,15 @@ Landon
 Landyn
 Lane
 Laney
+Laney
 Langston
 Lani
-Laney
+Laos
 Larissa
 Laron
 Larry
 Larue
+Latvia
 Lauren
 Laurence
 Laurie
@@ -1635,6 +1734,7 @@ Leandro
 Leann
 Leanna
 Leanne
+Lebanon
 Lee
 Leif
 Leigh
@@ -1665,6 +1765,7 @@ Leopoldo
 Leroy
 Lesley
 Leslie
+Lesotho
 Lessie
 Lester
 Leta
@@ -1682,9 +1783,12 @@ Liam
 Liana
 Libbie
 Libby
+Liberia
 Liberty
+Libya
 Lida
 Lidia
+Liechtenstein
 Lila
 Lilah
 Lili
@@ -1715,8 +1819,9 @@ Lionel
 Lisa
 Lisandro
 Lisette
-Lisha
 Lisette
+Lisha
+Lithuania
 Litzy
 Liza
 Lizeth
@@ -1782,6 +1887,7 @@ Lupe
 Lura
 Lurline
 Luther
+Luxembourg
 Luz
 Lyda
 Lydia
@@ -1803,10 +1909,13 @@ Mabel
 Mabelle
 Mable
 Mac
+Macedonia
+Macedonia
 Macey
 Mack
 Mackenzie
 Macy
+Madagascar
 Madaline
 Madalyn
 Maddison
@@ -1839,17 +1948,22 @@ Makayla
 Makenna
 Makenzie
 Malachi
+Malawi
+Malaysia
 Malcolm
+Maldives
 Maleah
+Mali
 Malika
 Malinda
 Mallie
 Mallory
+Malta
 Malvina
+Man
 Mandy
 Manley
 Manuel
-Man
 Mara
 Marc
 Marcel
@@ -1913,6 +2027,7 @@ Marques
 Marquis
 Marquise
 Marshall
+Marshall
 Marta
 Martin
 Martina
@@ -1941,6 +2056,8 @@ Maureen
 Maurice
 Mauricio
 Maurine
+Mauritania
+Mauritius
 Maverick
 Mavis
 Max
@@ -1991,6 +2108,7 @@ Merritt
 Mertie
 Mervin
 Meta
+Mexico
 Mia
 Micaela
 Micah
@@ -2001,6 +2119,7 @@ Micheal
 Michel
 Michele
 Michelle
+Micronesia
 Miguel
 Mikayla
 Mike
@@ -2030,9 +2149,12 @@ Mohamed
 Mohammad
 Mohammed
 Moises
+Moldova
 Mollie
 Molly
 Mona
+Monaco
+Mongolia
 Monica
 Monique
 Monroe
@@ -2040,9 +2162,11 @@ Monserrat
 Monserrate
 Montana
 Monte
+Montenegro
 Monty
 Morgan
 Moriah
+Morocco
 Morris
 Mortimer
 Morton
@@ -2050,6 +2174,7 @@ Mose
 Moses
 Moshe
 Mossie
+Mozambique
 Mozell
 Mozelle
 Muhammad
@@ -2060,6 +2185,7 @@ Murray
 Mustafa
 Mya
 Myah
+Myanmar
 Mylene
 Myles
 Myra
@@ -2074,6 +2200,7 @@ Myrtle
 Nadia
 Nakia
 Name
+Namibia
 Nannie
 Naomi
 Naomie
@@ -2090,6 +2217,7 @@ Nathanael
 Nathanial
 Nathaniel
 Nathen
+Nauru
 Nayeli
 Neal
 Ned
@@ -2100,12 +2228,16 @@ Nellie
 Nels
 Nelson
 Neoma
+Nepal
 Nestor
+Netherlands
 Nettie
 Neva
+New Zealand
 Newell
 Newton
 Nia
+Nicaragua
 Nicholas
 Nicholaus
 Nichole
@@ -2118,6 +2250,8 @@ Nicolas
 Nicole
 Nicolette
 Nigel
+Niger
+Nigeria
 Nikita
 Nikki
 Nikko
@@ -2142,7 +2276,10 @@ Norberto
 Norene
 Norma
 Norris
+North
+North
 Norval
+Norway
 Norwood
 Nova
 Novella
@@ -2169,6 +2306,7 @@ Olin
 Oliver
 Ollie
 Oma
+Oman
 Omari
 Omer
 Ona
@@ -2207,10 +2345,16 @@ Owen
 Ozella
 Pablo
 Paige
+Pakistan
+Palau
+Palestine
 Palma
 Pamela
+Panama
 Pansy
 Paolo
+Papua New Guinea
+Paraguay
 Paris
 Parker
 Pascale
@@ -2235,11 +2379,13 @@ Penelope
 Percival
 Percy
 Perry
+Peru
 Pete
 Peter
 Petra
 Peyton
 Philip
+Philippines
 Phoebe
 Phyllis
 Pierce
@@ -2248,8 +2394,10 @@ Pietro
 Pink
 Pinkie
 Piper
+Poland
 Polly
 Porter
+Portugal
 Precious
 Presley
 Preston
@@ -2259,6 +2407,7 @@ Princess
 Priscilla
 Providenci
 Prudence
+Qatar
 Queen
 Queenie
 Quentin
@@ -2319,6 +2468,9 @@ Reinhold
 Remington
 Rene
 Renee
+Republic
+Republic
+Republic
 Ressie
 Reta
 Retha
@@ -2335,6 +2487,7 @@ Rhea
 Rhett
 Rhiannon
 Rhoda
+Rica
 Ricardo
 Richard
 Richie
@@ -2372,6 +2525,7 @@ Rollin
 Roma
 Romaine
 Roman
+Romania
 Ron
 Ronaldo
 Ronny
@@ -2418,10 +2572,12 @@ Rupert
 Russ
 Russel
 Russell
+Russia
 Rusty
 Ruth
 Ruthe
 Ruthie
+Rwanda
 Ryan
 Ryann
 Ryder
@@ -2436,6 +2592,9 @@ Sadie
 Sadye
 Sage
 Saige
+Saint Kitts and Nevis
+Saint Lucia
+Saint Vincent and the Grenadines
 Sallie
 Sally
 Salma
@@ -2448,7 +2607,9 @@ Samara
 Samir
 Sammie
 Sammy
+Samoa
 Samson
+San Marino
 Sandra
 Sandrine
 Sandy
@@ -2458,10 +2619,12 @@ Santiago
 Santina
 Santino
 Santos
+Sao Tome and Principe
 Sarah
 Sarai
 Sarina
 Sasha
+Saudi Arabia
 Saul
 Savanah
 Savanna
@@ -2479,9 +2642,12 @@ Sedrick
 Selena
 Selina
 Selmer
+Senegal
+Serbia
 Serena
 Serenity
 Seth
+Seychelles
 Shad
 Shaina
 Shakira
@@ -2519,6 +2685,7 @@ Sid
 Sidney
 Sienna
 Sierra
+Sierra Leone
 Sigmund
 Sigrid
 Sigurd
@@ -2527,19 +2694,29 @@ Sim
 Simeon
 Simone
 Sincere
+Singapore
 Sister
 Skye
 Skyla
 Skylar
+Slovakia
+Slovenia
 Sofia
 Soledad
+Solomon Islands
 Solon
+Somalia
 Sonia
 Sonny
 Sonya
 Sophia
 Sophie
+South Africa
+South Korea
+South Sudan
+Spain
 Spencer
+Sri Lanka
 Stacey
 Stacy
 Stan
@@ -2561,14 +2738,19 @@ Stevie
 Stewart
 Stone
 Stuart
+Sudan
 Summer
 Sunny
+Suriname
 Susan
 Susana
 Susanna
 Susie
 Suzanne
 Sven
+Swaziland
+Sweden
+Switzerland
 Syble
 Sydnee
 Sydney
@@ -2577,6 +2759,7 @@ Sydnie
 Sylvan
 Sylvester
 Sylvia
+Syriae
 Tabitha
 Tad
 Talia
@@ -2706,6 +2889,8 @@ Van
 Vance
 Vanda
 Vanessa
+Vanuatu
+Vatican City
 Vaughn
 Veda
 Velda
@@ -2713,6 +2898,7 @@ Vella
 Velma
 Velva
 Vena
+Venezuela
 Verda
 Verdie
 Vergie
@@ -2735,6 +2921,7 @@ Victor
 Victoria
 Vida
 Vidal
+Vietnam
 Vikki
 Vilma
 Vince
@@ -2827,6 +3014,7 @@ Yasmeen
 Yasmin
 Yasmine
 Yazmin
+Yemen
 Yesenia
 Yessenia
 Yolanda
@@ -2841,6 +3029,7 @@ Zachery
 Zack
 Zackary
 Zakary
+Zambia
 Zander
 Zane
 Zaria
@@ -2849,9 +3038,11 @@ Zelda
 Zelma
 Zena
 Zetta
+Zimbabwe
 Zina
 Zion
 Zita
+Zoe
 Zoe
 Zoey
 Zoie
@@ -2859,4 +3050,5 @@ Zoila
 Zora
 Zula
 Zuri
-Zoe
+D'Ivoire
+Formerly
